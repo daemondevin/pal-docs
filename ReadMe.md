@@ -1,14 +1,4 @@
 
-Topic 1.1 <i class="icon-docs"></i>
-
-----------
-
-**Table of Contents <i class="icon-sitemap"></i>**
-
-[TOC]
-
-----------
-
 # <i class="icon-book"></i> The PAF Docs
 
 ## Preface <i class="icon-help-circled"></i>
