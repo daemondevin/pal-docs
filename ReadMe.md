@@ -1,4 +1,6 @@
 
+_This is currently being worked on. For the complete and up-to-date version of this guide visit http://softables.tk/docs_
+
 # <i class="icon-book"></i> The PAF Docs
 
 ## Preface <i class="icon-help-circled"></i>
