@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=1024, initial-scale=1"/>
+  <meta name="title" content="2.3 Virtualization | The PAF Docs"/>
+  <meta name="author" content="demon.devin"/>
+  <meta name="lang" content="en"/>
+  <title>
+   2.3 Virtualization | The PAF Docs
+  </title>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'/>
+  <link href="../css/docs.css" rel="stylesheet" type="text/css" data-instant-track/>
+  <link href="../css/extend.css" rel="stylesheet" type="text/css" data-instant-track/>
+  <link href="../css/portacons.css" rel="stylesheet" type="text/css" data-instant-track/>
+  <link rel='stylesheet prefetch' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'/>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+  <script type="text/javascript" src="../js/jquery.fancybox.js"></script>
+  <link rel="stylesheet" href="../css/vsdark.css" type="text/css"/>
+  <script src="../js/highlight.pack.js" data-no-instant></script>
+  <script data-no-instant>hljs.initHighlightingOnLoad();</script>
+   </head>
+     <div class='wrapper'>
+      <main class="main isOpen" role="main">
+       <div class='holder'>
+        <div class="content">
+         <div class="heading">
+          <div class='issue'>
+           <p>Topic <span>2.3</span></p>
+          </div>
+          <article role="article">
+           <h1 id="virtualization">Virtualization</h1>
+
+
+<h2 id="definition">Definition</h2>
+
+<p>Wikipedia has the definition of software virtualization defined as:</p>
+
+
+
+<div class="quote">
+<img src="../img/windows-xp-7-8.1.png" class="screen"/>
+<div class="right_quote"><br>
+...software technology that encapsulates computer programs from the underlying operating system on which it is executed. A fully virtualized application is not installed in the traditional sense, although it is still executed as if it were. ...behaves at runtime like it is directly interfacing with the original operating system... ...but can be isolated or sandboxed...</em>"
+</div>
+<span class="quote_sign"></span>
+</div>
+
+<p>The difference between hardware virtualization<sup class="tool-tip"><a href="#fn:hardware" id="fnref:hardware" title="See footnote" class="footnote">1</a></sup> solutions, such as VMware Workstation or Virtual PC, and application virtualization is that in the latter case the operating system, the host PC, is executing the program. However, you could say that Windows Vista supports application virtualization as well considering it can <a href="http://softables.tk/docs/advanced/uac#no-execution" title="VirtualStore">virtualize folder structures</a> and the registry for legacy applications. So the virtualization solutions differ only with respect to the objects they virtualize. Some solutions will virtualize a full-blown computer while others may only touch upon a program’s folder.</p>
+
+<p>There are two different ways in which an application can be virtualized: the packager compares the snapshots taken before and after the installation, or the packager intercepts all operations of the original installation program. The latter is more reliable in the sense that the differences between the PC used to virtualize the program and the target machine are much less important.</p>
+
+
+<hr>
+<h2 id="advantages">Advantages</h2>
+
+<p>Installing an application can be prone to errors. The more applications you install on a desktop, the more bloated its registry and system folder can get. Thus, making the computer slower and increases the chance of failures. Application virtualization leaves the registry and system folders untouched. Sometimes installing an application can corrupt another application which makes virtualization a nice answer in reducing the risk of application conflicts. You can also deploy runtime environments together with the application. This enables you to run different versions of a runtime environment on a host PC. For example, you can run different Java versions simultaneously without messing around with environment variables. Virtualizing is also often OS independent. Legacy applications that wouldn’t work on a 64 bit might run without problems on Vista x64 in a virtual environment. Together with Wine and Crossover, you can also run complex Windows applications on Linux and OS X. Lastly, the end user requires minimal privileges: Legacy applications that require administrative rights usually work in environments where end users only have standard rights.</p>
+
+
+<hr>
+<h2 id="disadvantages">Disadvantages</h2>
+
+<p>Most solutions usually pack the entire virtualized application in just one large executable. While this can simplify deployment of the virtualized application in some environments, the resulting file size can be massive (sometimes in excess of 1GB or more). There’s many factors to take into consideration like shell integration, system drivers, and in most cases you won’t get any support from a vendor if they know the product has been virtualized. Some packagers are better about this than others. Of course, various application virtualization solutions also differ in the way they deal with the aforementioned disadvantages.</p>
+
+<p><a href="https://baltagy1.blogspot.com/">Baltagy</a>, who specializes in virtualizing applications, has informed me that another huge disadvantage to virtualizing applications is you cannot use <a href="docs/advanced/services" title="Windows Services">Windows Services</a> when trying to make an application portable. This is because once the virtualized application is launched on a machine and exited, that service(s) is left behind on the host machine. This is why he won’t make a virtualized version of an application that uses a service. This will ultimately limit you on what applications you can make portable with virtualizing if you care about quility like he does.. Thank you Baltagy.</p>
+<hr>
+<footer>
+<div class="footnotes"><ol><li id="fn:hardware">Hardware virtualization is the creation of virtual (as opposed to a physical device) versions of computers and operating systems. <a href="#fnref:hardware" title="Return to article" class="reversefootnote">↩</a></li></ol></div></footer>
+          </article>
+          </div>
+         </div>
+        </div>
+       </main>
+	   <div class="aholder">
+            <aside class="jtaSidebar-cont">
+             <div class="jtaSidebar">
+              <div class="jtaSidebar-inner">
+               <nav class="float-links">
+				<ul><li><i class="fa">&#xf0a8;</i> <b>Previous Topic:</b><br /><a class="n" href="2.2 Advantages.html" title="Advantages">Advantages</a></li> <li><i class="fa">&#xf015;</i> <b>Parent Topic:</b><br /><a class="n" href="2.1 To Begin.html" title="Getting Started">Getting Started</a></li> <li><i class="fa">&#xf0a9;</i> <b>Next Topic:</b><br /><a class="n" href="2.4 Tools.html" title="Tools">Tools</a></li></ul>
+               </nav>
+              </div>
+              <div class="jtaSidebar-inner anchors-away" style="width: 169px;">
+              </div>
+             </div>
+            </aside>
+           </div>
+          </div>
+<script type="text/javascript" src="../js/jquery.cycle.all.min.js"></script>
+       <script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
+       <script type="text/javascript" src="../js/jquery.flexslider-min.js"></script>
+       <script type="text/javascript" src="../js/flexslider.js"></script>
+       <script type="text/javascript" src="../js/jquery.easing-1.3.pack.js"></script>
+       <script type="text/javascript" src="../js/extend.js" data-instant-track></script>
+      <script type="text/javascript" src="../js/docs.js" data-instant-track></script>
+ </body>
+</html>

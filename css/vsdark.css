@@ -1,0 +1,67 @@
+/*
+Name: Visual Studio 2012 Dark (Mod)
+Date: May 1st, 2017
+Author: demon.devin <demon.devin@gmail[DOT]com>
+*/
+
+.hljs {
+  color: #a9b7c6;
+  background: rgb(22, 22, 22);
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-symbol,
+.hljs-bullet {
+  color: #FF8040;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-deletion {
+  color: #569CD6;
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-link {
+  color: #FF8040;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #57A64A;
+}
+
+.hljs-meta {
+  color: #D2A8A1;
+}
+
+.hljs-string,
+.hljs-attribute,
+.hljs-addition {
+  color: #FF0000;
+}
+
+.hljs-section,
+.hljs-title,
+.hljs-type {
+  color: #ffc66d;
+}
+
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #e8bf6a;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
