@@ -1,0 +1,87 @@
+
+Topic 4.2 <i class="icon-docs"></i>
+
+----------
+
+**Table of Contents <i class="icon-sitemap"></i>**
+
+[TOC]
+
+----------
+
+# RegDLL & RegSrv32
+## Dynamic Libraries
+
+In short, a <span class="tooltip"><abbr>dll</abbr><span class="tooltip-box" style="display: none; bottom: 35px;">An acronym for Dynamic Link Library<span class="tooltip-arrow"></span></span></span> is a collection of small executable code, which can be called upon when needed by a running program. The DLL lets the executable communicate with a specific device such as a printer or may contain code to do any number of particular functions. The main advantage that I'm aware of is when and/or if the DLL is called, then it is loaded which means less resource intensive load on memory—better known as <span class="tooltip"><abbr>ram</abbr><span class="tooltip-box">An acronym for Random Access Memory<span class="tooltip-arrow"></span></span></span>. These files can be in differing file extensions, *i.e.* `.ocx` or even `.cpl`. Here's a bit more detail on the more common extensions:
+
+>*   **ActiveX Control Files (`.ocx`)**–Can perform a variety of reusable functions and are comparable to Java applets in their functionality. First introduced by Microsoft in 1996 as part of their _Component Object Model_ (COM) and _Object Linking and Embedding_ (OLE) technologies.
+*   **Control Panel Files (`.cpl`)**–There is a control panel file for every item located or listed in the Windows Control Panel. Each is a specialized file that may reference zero or more additional DLLs.
+*   **Device Driver Files (`.drv`)**–There are one or many device driver files for each hardware component installed on a Windows PC. One of the more prevalent are those installed for printers or network adapters; *i.e.* when you plug in a flash drive in a PC for the first time, that system takes a moment to install the required drivers.
+
+## Registering Files
+> With the PA.c Launcher that I'm currently developing I have eliminated the need to use the `custom.nsh` file to register DLLs. You can visit the GitHub project page [here](https://github.com/demondevin/portableapps.comlauncher#features) which will take you to the features section of the read me file for more information.
+### Command Line
+If you need to register/unregister DLL files you can do so a couple of ways. The first of which we'll be discussing is how to do so using the _Regsvr32_ command line. Windows PCs with Internet Explorer 3.0 or later have `Regsvr32.exe`. So trust me when I say there's a good chance your PC came stock with this. If you are running on a x64 computer, there are two variants you can consider. They can be found in either `$WINDIR\system32` or in `$WINDIR\SysWow32`.
+
+The parameters you can use with RegSrv32 are `/u``/s``/i``/n`. The `/u` command switch will unregister the file. The `/i` switch can be used with `/u` to call for DLL uninstallation. The `/n` parameter will not call _DllRegisterServer_; it's used with `/i` which is the install switch. If you use `/s`, which means silent, no message boxes will be displayed on Windows XP or later.
+
+When using `Regsvr32.exe` from the command line you'll get message boxes after calling it. The _DLLSelfRegister_ function will be invoked unless using the aforementioned switch of course; if successful an alert box will be shown denoting it's success—as the same for failure which throws an error message.
+
+> <i class="icon-help-circled"></i> **Note:**
+> It's been my experience that the x64 `RegSvr32.exe` registers x86 DLL's properly on Windows Vista[^XP] and above so I use it when installing on x64 systems even when registering a x86 file for PAFs that can't run on WinXP and older anyway.
+
+That's just my opinion but you may use what works for you.
+
+### CLI Example
+```NSIS
+;= Regardless of architecture we're using just the following
+!define REGSVR `$SYSDIR\regsvr32.exe` ;= define where RegSrv32 is
+!define DLL `$AppDirectory\App\MyLegalProgram\myLegit.dll` ;= define the file to register
+;=#
+;= Command line usage is the same for both variants of RegSrv32 as follows
+;= regsvr32 [/u] [/s] [/n] [/i[:cmdline]] DLL
+;=#
+;= So in our custom.nsh file it would be similar too the following
+Exec `"${REGSVR}" /s "${DLL}"`	;= notice the lack of the /i switch
+;= That's because we aren't actually installing it
+;= Additionally you may also use the following
+ExecWait `"${REGSVR}" /s "${DLL}"` $0 ;= The $0 will contain the error code if any
+;= The above will wait for exe to quit it's process before continuing
+```
+
+## GUIDs/CLSIDs
+A Class ID (`CLSID`) is a 128 bit (large) number that represents a unique ID for a program or application component. Think of a `CLSID` as a _social security number_ but for an application or its component. `CLSIDs` are used by Windows to identify software components without having to know their name. They can also be used by applications to identify a computer, file or other similar information. These IDs are generated by using the current time, network adapter address (if present), and other items on a computer so that no two numbers will ever be the same.
+
+The registry entries for any registered DLL are usually located in the `HKEY_CLASSES_ROOT\CLSID` section of the registry. Each entry under `CLSID` is a subtree whose name is a bracketed `GUID`[^GUID] (*i.e.* `HKCR\CLSID\{00000000-0000-0000-0000-000000000000}`). If a DLL has been properly registered, it will have a subtree underneath this called `InProcServer32`. The default value of the `InProcServer32` subtree is the full path to the DLL which corresponds to that `GUID`. This value may be one of two types; `REG_SZ` or `REG_EXPAND_SZ`. If it's `REG_EXPAND_SZ`, the path will typically contain an environment variable such as `%SystemRoot%` in the path name.
+
+> <i class="icon-attention-circled"></i> **Attention!**
+> A developer has full control over what happens when you call `RegSvr32`. Usually they will register COM controls in `HKCR`, but they don't have to. They can do whatever they feel like doing and there's no absolute way for you to tell whether they've done it or not.
+
+## Implementation
+### RegDLLView
+To find out all the information that you will need from a DLL file for registering, I use a little program called [RegDLLView](http://softables.tk/docs/getting-started/toolbelt#regdllview "RegDLLView") by NirSoft. This makes finding the `GUID`, `ProgID`, and `CLSID` ridiculously easy.
+### Usage
+If you're PAFing with my build of [PAL](https://github.com/demondevin/portableapps.comlauncher) then all you will need is the `ProgID` and the file path of the DLL(s) that need registering. If you haven't already done so, grab both variants of [RegDLLView](http://softables.tk/docs/getting-started/toolbelt#regdllview "RegDLLView") (x32 & x64—if you do not have a 64-bit machine do not worry about it but you're obviously limited to only building 32-bit compliant PAFs). Once you've got _RegDLLView_, go on and launch the 64-bit version (don't worry about trash or clean up.. _RegDLLView_ is completely portable by itself) and wait for it to finish loading (refer to the bottom, left corner of the window; you should see something like, _"Loading..."_). Once it's all loaded, look for the column `Last Registered On` in the top window pane and click on it until the list is sorted to the most recent date.
+
+Now you can look for your applications DLL files. Scan for your application's company name. If there isn't anything for your application then close out _RegDLLView_ and open the 32-bit version and repeat the previous steps. If you do find something (there can be more than one) that relates to your application, refer to the file path column and locate that DLL. If the DLL's location is inside the application folder then no furthur action is required on your part because the DLL will be in the `%PAL:AppDir%\AppName` folder anyway. However, if the DLL is not located in the application folder and it is somewhere like `$SYSDIR\DynamicLibrary.dll` than you're going to need to copy the DLL into your PAF's folder (<abbr>i.e.</abbr>`..\App\DefaultData` so you can access them from `..\%PAL:DataDir%` as well as have a back up if needed later).
+
+After you've copied the DLL you can now select the DLL reference in the top window pane of _RegDLLView_. Notice in the bottom window pane there is now one or more lines of data in regards to this DLL file. You'll only need the first line as this is where you can find the `ProgID` and that is what we want! Now in the `Launcher.ini` you just need the `ProgID` and the file path to the DLL(s) you want to register before launching the actual application. So you can now add the section `[RegesterDLL1]` and `[RegesterDLL2]` and so on depending on how many you might need. Your `Launcher.ini` file should have something similiar to this:
+
+```INI
+[RegisterDLL1]
+ProgID=MyAppControlPanel
+File=%PAL:AppDir%\controller.cpl
+
+[RegisterDLL2]
+ProgID=DynamicLibrary
+File=%PAL:DataDir%\dynlib.dll
+```
+
+> <i class="icon-info-circled"></i> **Alert:**
+> Visit the official page on my website for even more content on this topic. 
+> 
+> - [Registering DLLs on The PAF Docs](http://softables.tk/docs/advanced/regdll-and-regsrv32 "Registering DLLs | Softables.tk/")
+
+[^XP]: Won't work on *Windows XP*. You can find out more about why it won't work with *Windows XP* by visiting this [article](http://support.microsoft.com/kb/282747).
+
+[^GUID]: `GUIDs` are used to identify components and interfaces in the form of class IDs (`CLSID`) and interface IDs (`IID`). You can find out more by visiting this [article](https://msdn.microsoft.com/en-us/library/windows/desktop/ms691424(v=vs.85).aspx "CLSID Key (COM)").

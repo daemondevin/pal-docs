@@ -1,0 +1,46 @@
+
+Topic 2.4 <i class="icon-docs"></i>
+
+----------
+
+**Table of Contents <i class="icon-sitemap"></i>**
+
+[TOC]
+
+----------
+
+
+# Tools of the Trade
+
+This here is a list of software that I use to make portable applications. These are just what I use and while they're good for what I look for in making PAFs, the same might not be so for you. As you get more experienced, you'll find tools to your liking in which you'll use in place of these.
+
+## NSIS
+The heart and soul of every portable application. Well, any PortableApps.comFormat compliant application anyway. NSIS is a professional open source system to create standard Windows installers as well as the portable launchers we'll be discussing here. Visit the [homepage](http://nsis.sourceforge.net/Main_Page)&nbsp;and download the installer or get the [portable version](https://portableapps.com/apps/development/nsis_portable) by PortableApps.com. [Reg2NSIS](http://nsis.sourceforge.net/Reg2Nsis_-_convert_registry_info_into_NSIS_commands) is a small utility which converts .reg files into usable NSIS code but more on this later.
+
+## Total Uninstall
+This application helps to monitor any changes made to your system during the installation of a new program. It allows you to take a snapshot of your system prior to installing a new program. It then takes an additional snapshot after the installation has completed after which compares the two snapshots and displays all changes in a graphical tree view, marking all registry values and/or files that have been added, changed or deleted. Total Uninstall saves these changes for later review. Visit their [support documentation](http://www.martau.com/document/total-uninstall.php) for more information. You can download the portable version[^TU] of Total Uninstall that I use [here](https://files.mycloud.com/home.php?brand=webfiles&seuuid=bde41eeb7e8ec9eef82babf346a79961&name=TUPortable_6.18.Rev1.paf_2).
+
+## Notepad++
+
+[Notepad++](https://notepad-plus-plus.org/ "Official Notepad++ Website") is a free source code editor and Notepad replacement that supports several languages including NSIS. With this application you are sure to increase your PAF making productivity, I know I do. You can find the official  portable version released by PA.c [here](https://portableapps.com/apps/development/notepadpp_portable "Notepad++ Portable by PA.c") or you can use my portable version of Notepad++ which is a much better portable version than PA.c's version. Visit the [GitHub Project Page](https://github.com/demondevin/Notepad-Deux-Plus-Portable "demon.devin's Notepad++ Portable GitHub Project Page") for more about my portable version of Notepad++. 
+
+Some plugins you should consider using with Notepad++ are as follows:
+
+> - **NppExec** &mdash; enables you to run commands/programs directly from within Notepad++. 
+> - **Explorer** &mdash; for it's *NppExec* script support[^plugin].
+> - **TextFX** &mdash; has many useful functions to aid in your productivity.
+> - **Language Help** &mdash; when configured properly, can enable you to highlight any word and launch a corresponding `.chm` or other help file to the highlighted selections topic.
+
+## IcoFX
+[IcoFX](http://icofx.ro/) is a professional icon and cursor editor for Windows. It is an all-in-one solution for icon creation, extraction and editing. I use this tool to extract the applications icons for use with the portable version. Pick up the portable version [here](https://portableapps.com/apps/graphics_pictures/icofx_portable "PA.c IcoFX Portable") which is released by PA.c.
+
+## RegDLLView
+[RegDllView](http://www.nirsoft.net/utils/registered_dll_view.html "RegDLLView by Nirsoft") is a small utility that displays the list of all registered `dll`/`ocx`/`exe` files (COM registration). For each registered file, you can view the last date/time that it was registered, and the list of all registration entries (`CLSID`/`ProgID`). Use this tool to get an idea of what DLL files you'll need to register for your portable application. Make sure to get both 32bit and 64bit variants. You can probably use some more of [NirSoft's Utilities](http://www.nirsoft.net/).
+
+## VirtualBox
+
+Oracle's [VirtualBox](https://www.virtualbox.org/ "VirtualBox") is a x86 and AMD64/Intel64 virtualization tool for running Windows, Linux, Macintosh, Solaris, etc. It supports a large number of guest operating systems and is actively developed with frequent releases. So software that you use within a virtual machine won't interfere with the host operating system. [Portable-VirtualBox](http://www.vbox.me/ "Portable-VirtualBox") offers the same features that VirtualBox does while maintaining its own portable environment. Thus, making this a perfect tool for capturing our applications in a controlled environment. You can find pre-built virtual machines over at the [Oracle Tech Network](http://www.oracle.com/technetwork/community/developer-vm/index.html "Oracle Tech Network").
+
+[^plugin]: With both the *NppExec* and *Explorer* plugins, your PAF environment can become much more easier on you (i.e. *Explorer's* *NppExec* support can be accessed from within the *Explorer's* window pane via the context menu)
+
+[^TU]: This was the last known publicly released `PAF` by FukenGruven.

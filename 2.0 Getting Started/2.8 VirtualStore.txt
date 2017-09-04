@@ -1,0 +1,46 @@
+
+Topic 2.8 <i class="icon-docs"></i>
+
+----------
+
+**Table of Contents <i class="icon-sitemap"></i>**
+
+[TOC]
+
+----------
+
+# VirtualStore
+
+## VirtualStore
+For those who don't know, VirtualStore is Windows 7's way of handling applications writing to locations it thinks the user/application shouldn't be able to (Program Files for example). This is generally because the application in question has been designed to modify files within its own directory. To show exactly what I mean I'll use I Have No Tomatoes as a reference.
+
+The base application installs to the folder `Program Files\I Have No Tomatoes`. The application stores its settings in config.cfg, which is installed by default in the base application's directory, and also stores high scores in hiscore.lst which is not created until you finish your first game. But what happens when we run the game (without specifying to run as admin) and change some settings or make a high score?
+
+Because Windows Vista and later will not allow an application to write to anything under Program Files (this is including its own file directory) it instead redirects the file to `%LocalAppData%\VirtualStore\Program Files\I Have No Tomatoes`. As far as the base application is concerned, anything located under `%LocalAppData%\VirtualStore` with a path equivalent to its install directory will appear to be in exactly the same place it was originally intended to be (in our case the files are in `%LocalAppData%\VirtualStore\Program Files\I Have No Tomatoes`, but the original application still believes they are in `C:\Program Files\I Have No Tomatoes`).
+
+## VirtualProblems
+The VirtualStore redirect is all good and tricky and protects Windows from programs made to do something Microsoft thinks they shouldn't, but what happens if you then run the application as an administrator?
+
+In typical Microsoft fashion, things break. Instead of going "Hey I have VirtualStore data for this application, I'll use that", or even better "I have VirtualStore data for this application that is newer (and/or exists)", it just uses the data in the install directory. So guess what? Settings are back to the default, and high scores are non-existent, unless you exit the application and run it without admin rights. This also causes the issue that high scores for this game will only ever accumulate on a per-user basis. Nobody who logs in as _User 1_ will see the high scores for _User 2_, and vice versa.
+
+### VirtualStore Effects & PAFs
+
+As long as the files are meant to be in the install directory (as in the example above) we can ignore the redirect to `\VirtualStore`, as PortableApps should be installed to a location to which the user has write access, so when making I Have No Tomatoes into a PortableApp the following is all I need:
+
+```INI
+[FilesMove]
+config.cfg=%PAL:AppDir%\IHaveNoTomatoes
+hiscore.lst=%PAL:AppDir%\IHaveNoTomatoes
+```
+
+If, however, I was trying to do something trickier like import a local application's settings into the PortableApp with custom code, I would potentially have to check both places and compare the last modified date to ensure I was getting the most recent data for the application.
+
+### VirtualStore & Installing/Running PAFs
+
+For those who like to run PortableApps from a local hard drive (as I do on my home PC) VirtualStore is another great reason to never install PortableApps to the Program Files directory. Why bother installing a PortableApp in an attempt to minimize the effect an installation has on your system, to then force your system to handle the VirtualStore redirects for every file changed by the Launcher and the base application? To me, that is like trading a metal bucket half-full of water for a plastic bucket completely full of water because the plastic bucket would be lighter if it were empty.
+
+### VirtualStore Redirection in PAFs Design
+
+I am not quite sure how the `\VirtualStore` redirect is done in regards to the installed application itself. Obviously it is more than just appending `\VirtualStore\whatever\path` to the application's `%PATH%`, and there is nothing in the Registry for it. I am wondering though if there is the potential to use this feature to fool a portable application into thinking we have installed something it needs to `C:\Windows` (which is another system folder protected by the `\VirtualStore` redirect) for those badly designed apps that need such a workaround?
+
+> **Attention:** Most of this page was quoted from what [Ken Herbert](https://portableapps.com/node/35519) had written on his PA.c blog entry. Some editing was applied for grammatical and aesthetic purposes. Thank you Ken Herbert!

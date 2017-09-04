@@ -1,0 +1,57 @@
+
+Topic 3.1 <i class="icon-docs"></i>
+
+----------
+
+**Table of Contents <i class="icon-sitemap"></i>**
+
+[TOC]
+
+----------
+
+# Your Work Environment
+On this page we'll be setting up our workspace. Having a well organized desk or workbench can allow you to work a bit more smoothly and effectively, right? Well the same goes for PAF development. So I'll be walking you through the process in setting up VirtualBox with the proper utilities geared towards developing portable applications. First and foremost, go ahead and download [VirtualBox](https://www.virtualbox.org/ "VirtualBox") if you haven't already done so. I'd recommend using [Portable-VirtualBox](http://www.vbox.me/ "Portable-VirtualBox") for obvious reasons.
+
+> **Note:** For a more exhaustive walk-through on setting up VirtualBox, you can visit this Lifehacker [article](http://lifehacker.com/5204434/the-beginners-guide-to-creating-virtual-machines-with-virtualbox).
+
+## VirtualBox Setup
+Once you've gotten your VirtualBox downloaded go ahead and launch it. It'll ask for administrative privileges if VirtualBox drivers are not already installed on your system. If you're using Portable-VirtualBox it'll ask you to download the required program files. Just follow the prompts to continue on. Once it's finished, select which architecture you'd like to extract; either 32bit and/or 64bit, it's your preference. Although I'd of course recommend x64 for compatibility with x64 programs.
+
+Now would be a good time for you to go ahead and download [*WinLite*](https://files.mycloud.com/home.php?brand=webfiles&seuuid=6b705dc9257037f5c4c5cc7a9c805039&name=WinLite "Windows XP Lite ISO"). It's a miniature version of *Windows XP* stripped of unnecessary stuff leaving just the essentials. It's compressed as small as possible without omitting its main features. So, when you install this on your virtual machine you will end up with a file size of about 170mb. The installation process only takes about 10-15 minutes. So you'll be up and running in no time. This is what I use for WinXP support.
+
+> **Note:** You should know that while *WinLite* will work on a virtual machine it will not work on your physical machine. I believe it's only meant for a virtualized environment.
+
+## OS Installation
+While we will be focusing on installing Windows XP Lite, the guidelines we'll be using here can be used for newer versions of Windows as well.
+
+
+----------
+
+
+### *Step #1:* OS Name & Type
+The first screen will require you to give the virtual machine a name and allow you to select the operating system. Since we're installing Windows XP Lite let's name this WinXPLite; you can name it whatever your hearts content however. 
+
+After you have configured the name and the OS type click the Next button to move on.
+
+### *Step #2:* Virtual Memory
+The next screen requires you to select the amount of memory you want to dedicate to your Virtual Machine. Use caution with this setting. You have to still have enough memory left for your host operating system to run. By default VirtualBox will offer you the minimum required to run the virtual machine. This is fine if you don't plan on doing much. If, however, you plan on running particular applications that are memory intensive, you should bump up the virtual memory a bit. However, in our case the default allotment is fine.
+
+### *Step #3:* Hard Drive
+Before VirtualBox can install an OS it has to have a virtual hard drive. In order to create a new virtual hard drive you have to click the New button. This will then take you into a completely different wizard. This wizard is very simple and walks you through it's process step by step.
+
+Once you have finished that section, you are ready to finalize your virtual machine and begin installation. Click Finish to proceed.
+
+### *Step #4:* Virtual ISO
+Now select your newly created machine in the left pane and click the Settings button. When the new window shows up go ahead and select the Storage option in the left pane. Here you'll be able to select the *WinXP Lite ISO* file. In the Storage Tree area select the Empty CD underneath the IDE Controller. Next you'll want to click on the CD icon on the right under the Attributes area and select *Choose Virtual Optical Disk File...* Now browse for your ISO and select Open. Save your settings.
+
+### *Step #5:* Install OS
+Click the big green arrow to start your new virtual machine. Follow this installation as you would any other time. Once everything has been installed and finished you're going to want to take a Snapshot of your system. This will preserve the state your virtual machine is in right now. This is helpful so you can restore it to this clean state after installing an application. Do this by clicking on the Machine menu item and hitting _Take Snapshot..._
+
+You're all done!
+
+
+----------
+
+
+## Clean Snapshots
+It would be wise on your part to take a snapshot of your [clean machine](http://www.simonlong.co.uk/blog/2011/11/02/thinapp-best-practices-keep-it-clean/). Snapshots give you the option to go back to a previous state; similar to System Restore for Windows. This way you can return to the state at which you first installed your virtual machine so it's ready for another new application installation.

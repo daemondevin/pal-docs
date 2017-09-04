@@ -1,0 +1,33 @@
+
+Topic 3.2 <i class="icon-docs"></i>
+
+----------
+
+**Table of Contents <i class="icon-sitemap"></i>**
+
+[TOC]
+
+----------
+
+# Capturing Snapshots
+If you don't have Total Uninstall, there are plenty of alternatives which you can use instead. I used to use [Advance Registry Tracer](http://softables.tk/depository/utilities/Advanced-Registry-Tracer "Advanced Registry Tracer") for registry comparisons awhile back before I found Total Uninstall. Some other alternatives you can try out are [RegShot](http://portableapps.com/apps/utilities/regshot_portable "RegShot") or [PR.I.MO](http://members.tripod.com/~randy_hall/primo.zip "PR.I.MO") which is one FukenGruven liked to use because it was easier read and understand. For the sake of this tutorial I'll be using Total Uninstall but you can use this with any other program as the idea is still the same.
+
+## Monitoring
+Monitoring a program is the act of taking note of any and all possible changes to a system the installation of a program. The monitored programs module in Total Uninstall is the method in which you should use to start your monitoring process. To create a snapshot of your system open Monitor Programs tab and click on Install. You'll be asked to create a snapshot so select _Create New Snapshot_ and wait for it to finish.
+
+> <i class="icon-help-circled"></i> **Note:**
+> It's wise to not do anything or have any other programs running while your in the process of taking a snapshot of your system. This is to help against any conflicts. Plus, it's just good practice..
+
+## Scanning Tips
+If you're going to be monitoring an installation using the virtual machine of WinLite we had set up in the last topic then the file system scan should only take about 15-30 seconds. Awesome, right? However, if you're using your own file system, capturing a snapshot of the file system may take in excess of 10 minutes. It's not frozen---it's still scanning your computer. Usually this can happen with computers that have been used for over a long period of time. Here's a few things you can do to speed up the scanning process if this is the case for you.
+
+> <i class="icon-attention-circled"></i> **Tips**
+> 
+> * Exclude folders from scanning like temporary internet files used by *Firefox* (some standard locations are already excluded). Also exclude other folders containing data such as your pictures or `.mp3` music collection. This is also a safety measure.
+* Do not include for scanning drives containing only data or any drive that you don't intend to use as a destination for installations excepting the boot drive and the drive where *Windows* is installed (in the normal cases the boot drive is the same drive where *Windows* is installed).
+* Do not add any registry key for scanning in the profile beside the default one. Especially the `HKEY_CLASSES_ROOT` which is a view of other registry keys and is very slow to scan because of [*registry redirection*](http://softables.tk/docs/basics/windows-registry#redirection "Registry Redirection - PAF Docs").
+* Do not remove any item from the default configured registry exclude list. Some entries are added to avoid scanning the same key twice.
+* Do not add to the include folders for scanning an entire drive (except the system drive) if you install all your programs in a specific folder, just add the folder you install to (*e.g.* instead of adding `D:\` add only `D:\Programs`).
+* Anti-virus programs, firewalls or other security software that intercept registry and file accesses increase the scan time. The impact of these utilities can be evaluated as well. So when creating a system snapshot, turn off *real time protection* (or a similar option).
+* The option "Include file details" -> "Version" in the scanning profile requires additional disk access. You will probably never use the extra information.
+* Defragment your hard drives/partitions. Defragmented hard drives are scanned much faster.

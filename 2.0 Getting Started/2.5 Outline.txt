@@ -1,0 +1,61 @@
+
+Topic 2.5 <i class="icon-docs"></i>
+
+----------
+
+**Table of Contents <i class="icon-sitemap"></i>**
+
+[TOC]
+
+----------
+
+# Development Outline
+
+## *I.* Brainstorm
+The first thing is having an idea to implement. A lot can go into just what to consider with creating a stand-alone portable application. What would be good software to be made portable? You might think about how much use an application may be before bothering with it. Or how much interest there will be from the end-user who will be using them; unless of course you're just making it for yourself in which case go nuts. Another thing to look into would be if your software already has its own PAF counterpart. If so, just use that one. We're not trying to reinvent the wheel here. Although, you might find the developer of that PAF just did a piss-poor job. In that case, rewrite their code with whatever you deem it needs and just remember to cite the original developer for his contribution or work. Oh and you might want to let them know about it too as a professional courtesy[^etiquette].
+
+## *II.* Licensing
+All software is licensed, in some way, no matter what, regardless. There is the standard commercial licenses like you'll see with [Microsoft's software](https://www.microsoft.com/en-us/Useterms/OEM/Windows/10/UseTerms_OEM_Windows_10_English.htm "Microsoft's Windows 10 License") or with [Adobe's Creative Suite](http://www.adobe.com/legal/terms.html "Adobe's Creative Suite License"). There is also the open source licenses with which you'll find in some of [Mozilla's software](https://github.com/mozilla/kitsune/blob/master/LICENSE "Mozilla's BSD 3-Clause License") or also in the [OpenOffice.org](http://www.openoffice.org/license.html "OpenOffice.org/ Apache License") applications. Commercial licenses, as a rule-of-thumb, does not permit an end-user the ability to alter their respective application or even redistribute it for that matter in any fashion. Free software with a commercial license, however, does permit you to redistribute an application, but not to modify it like with [Internet Explorer](https://support.microsoft.com/en-us/help/13783/internet-explorer-11-software-license-terms "Internet Explorer 11 Software License") and [Opera](http://www.opera.com/eula/computers "Opera's EULA").
+
+Now with open source licensing there's a lot more leniency in this aspect for it allows you to both freely modify an application and redistribute with your new and/or improved version. So in regards to PortableApps.com and their moral-compass, this is the only way to go when making software portable. Which is fine and understandably so and is as it should be for they are a public service. A free, open source ***LLC***[^LLC] at that and for all legality purposes should not partake in any sort of high-profile, pirating-Ponzi scandal or whatever the media/judicial system would make of it. However, the software that you pay for should arguably be yours to do with what you will. So in the confines for your own 127.0.0.1[^domain], port and let portable!
+
+## *III.* The Analysis
+To start the implementation of your PAF would be to study your software thoroughly. I mean, really get to know any and all ins-and-outs of the inner workings of the application. What makes it *tick*, you know? Look at it's clockwork[^clockwork] if you can. All this rigmarole to determine what needs to be altered, managed, and maintained to make this program portable. For instance, does said program store its settings in the registry or with an XML or INI file or even more convoluted, both along with the registry? Does it communicate with folders like `%DOCUMENTS%` or `%PUBLIC%` or even `%SYSDIR%` in some cases. Does it make use of a database like *SQLite* to store its configuration information like with how [AIMP Portable](https://portableapps.com/apps/music_video/aimp-portable "AIMP Portable")[^AIMP] handles its data?
+
+Another good habit you should get into is visiting the software developer's website and it's documentation before you release your PAF. I say this for the simple fact that it can have invaluable little gifts for your PAFs end result. Like finding little Easter eggs in forum posts or running across a bit of information in which will set your version apart and give it that little extra "*je ne sais quoi*"[^quote]. For example, with my version of [*RegOrganizerPortable*](http://softables.tk/depository/utilities/Reg-Organizer-Portable "Reg Organizer Portable by Softables.tk/") you'll notice in the root directory it holds two executables. This is because in my research I found a forum topic where the developer had disclosed a command-line switch to a user to launch the *Registry Editor* instead of launching the main program. Thus allowing me to incorporate this little switch into my portable release. Hence both `RegistryEditorPortable.exe` & `RegOrganizerPortable.exe`; all for an end-user's convenience and preference. I would have never came across this tidbit of information if I wasn't dedicated to a `PAFs` completeness in it's entirety.
+
+## *IV.* The Code
+After getting a real good idea of the programs functionality. You'll want to set up your environment/workspace; you're workbench or a manual-labourer's tool-belt or whatnot. Next, you would want to set certain configuration settings in the [`launcher.ini`](https://portableapps.com/manuals/PortableApps.comLauncher/ref/launcher.ini/index.html#ref-launcher-ini "launcher.ini - PA.c Docs") file. That is the file which will tell the launcher everything it needs to know to run without any dependencies from the host machine.
+
+The official `PAL` by PA.c allows you to make your program portable just by editing a few INI files and you are, for the most part, good to go. This is not the case however with the releases of `PAL` by FukenGruven. If you've managed the ability to see his codebase you'll notice his variant calls for a per-application dedicated `PortableApps.comLauncher.nsi` file. Meaning, you'll need to edit this file for every new `PAF` you make. This isn't the case for that of PA.c's Launcher which doesn't even acknowledge the existence of `PortableApps.comLauncher.nsi`.
+
+Now here's where we can get a bit overwhelmed if you're using a build of `PAL` by FukenGruven. You'll find to make something work with his variant, you have to edit the `PortableApps.comLauncher.nsi` file directly, unlike in the official builds of `PAL`, it's not discussed or even mentioned. The same goes for FukenGruven's build of the [PA.c Installer](https://portableapps.com/apps/development/portableapps.com_installer "PA.c Installer Generator"). With that being said, it's to be noted that you cannot reuse that edited `PortableApps.comLauncher.nsi` file with any other `PAF`; each program will call for different `!defines` inside that file.
+
+I've been developing a modified version of `PAL` which was inspired by the builds released by FukenGruven. With my variant of `PAL` I have taken all the enhancements added by FukenGruven and added them into my build. I've changed his code base to enable the ability to declare certain key/values in the `AppInfo.ini` and/or `Launcher.ini` files bringing back the original concept that PA.c was trying to accomplish. Visit the [GitHub Project Page](https://github.com/demondevin/portableapps.comlauncher "demon.devin's PA.c Launcher Project Page") for more information on my version of `PAL`. All the advanced features I have added to the PA.c Launcher Generator (not just FukenGruven's codebase; mine as well) can be reviewed by reading the `ReadMe.md` file. I have added so much extra features like automatic code signing and handling advanced procedures like *Windows Services* and registering DLL files from within the `Launcher.ini` file without having to use custom code. =)
+
+## *V.* Compression
+One of the things that you should be aware of is the size of your PAF. Portable applications should be relatively small in nature considering it'll consume less space on the portable device and launch more quickly as a result. Most, not all, but most EXEs and DLLs can be compressed using *UPX*[^UPX]. Most applications will compress fine. Some, occasionally, will have issues. It should be noted that Anti-Virus programs have a tendency to red-flag any program that has been packed by *UPX*. I do not use it so if you decide to use it than proceed with caution. 
+
+Java based programs use `JAR` archives, which are actually just `ZIP` archives with a different extension. Using an application like *7-zip* to re-compress these to their maximum compression level can save even more space if you're hardcore enough to do so.
+
+## *VI.* Hosting
+If you're sharing you PAFs with the public you'll need to house your releases somewhere for the end-user to download them. What I use is file hosting services which provide you with free space for holding and sharing files with people. I tend to use services that don't make the user do surveys or shove a lot of advertisements at a person. It would be a good idea for you to have cloud storage to keep your releases safe just in case the download links are deleted or broken. This way you may upload the PAF again and update the download link.
+
+Another option would be to use peer-to-peer file sharing like BitTorrent. However this would require you to have a dedicated system which has continuous access to the internet. If you're hardcore enough you could set up your own Torrent Server with one of your old dinosaur computers. You know the one that helped you through college and you were too reluctant to throw away because you've had many good times in kilobytes on it.. It might not be able to run any bleeding edge OS, but you can use it as a centralised file server to download and share files on your network and the web.
+
+## *VII.* Testing
+You'll want to thoroughly test your PAF for any possible scenario so that you can fix and work out all the bugs and have a solution before there's a problem for the end-user. A good way to do this would be having a virtual machine with a clean install of Windows XP all the way to Windows 10 or whatever is current right now. I test on Windows XP, Windows 8.1, and Windows 10.
+
+[^etiquette]: From one programmer to another, it is considered proper etiquette to give someone credit for their work. It is also considered good practice to assist the original developer by contributing to the source code's betterment.
+
+[^LLC]: `LLC`&mdash;An acronym for *Limited Liability Company* (*e.g.* *Rare Ideas, LLC*; the parent company to *PA.c*).
+
+[^domain]: `127.0.0.1`&mdash;My geeky way of saying your local **domain**; or *home* to be better said.
+
+[^clockwork]: `clockwork`&mdash;My way of saying to look at the source code (*i.e.* like taking a look under the hood of a car to see what makes the car run.. etc.).
+
+[^AIMP]: *AIMP Portable* was my first `PAF` to become an officially released application by PA.c. Yes, I'm proud of it. =P
+
+[^quote]: It's French for, "*A quality which can't adequately be described otherwise.*"
+
+[^UPX]: **UPX**&mdash;An executable packer for several executable formats. Visit their [GitHub project](https://upx.github.io/) for more.

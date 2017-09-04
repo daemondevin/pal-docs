@@ -1,0 +1,22 @@
+
+Topic 2.1 <i class="icon-docs"></i>
+
+----------
+
+**Table of Contents <i class="icon-sitemap"></i>**
+
+[TOC]
+
+----------
+
+# Getting Started
+
+## Let's Begin
+
+There are many options in considering which method you'll be using when creating a stand-alone portable application. The easiest method is probably virtualizing and that's not what we're focusing on in this guide. If that is what you're looking for than you might find [this](http://www.fcportables.com/how-to-make-portable-apps/ "How to Make Portable Apps | FC Portables") interesting. I'm not here to judge you.. Lol. We've all got to start some where. My first portable was a virtualized IE8\. Why? Well because I could using virtualization. Which should tell you how easy it is to use virtualization software. Like FukenGruven said in one of his tutorials,
+
+> *If you're a beginner.. I suggest getting your feet wet with ThinApp or Spoon Studio. Especially Spoon Studio because it comes with templates where it will essentially hold your hand and walk you through the entire process.*
+
+He goes on to say he preferred *Spoon Studio* over *ThinApp* because the finished product's size was smaller, a bit faster, and had greater support for 64-bit compatibility. If I remember correctly *Spoon Studio* also won't force you to use a splash screen either. If you'd like to see what he's talking about you can get *Spoon Studio 2012* [here](https://drive.google.com/open?id=0BzxQv18jVnTTU0cyM2M1UkhINjA "Spoon Studio") and *ThinApp Enterprise* [here](https://files.mycloud.com/home.php?brand=webfiles&seuuid=3f471c7c8b22e202e949decec8c8823c&name=ThinAppPortable_5.2.2_English.paf "ThinApp Enterprise").
+
+Don't get me wrong though; virtualization is a good mechanism for getting familiar with the practice. However, as you retain more knowledge you'll come to see virtualization has both it's upsides and it's downsides. More on this topic can be found [here](docs/getting-started/virtualization "Virtualization").

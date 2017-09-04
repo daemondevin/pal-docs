@@ -1,0 +1,54 @@
+
+Topic 4.1 <i class="icon-docs"></i>
+
+----------
+
+**Table of Contents <i class="icon-sitemap"></i>**
+
+[TOC]
+
+----------
+
+# UAC
+## Application Manifest
+With Windows Vista or above, the correct way to mark a program is to embed an application manifest within your application that tells the operating system what the application needs. There are attributes within this application manifest that permit developers to specify their programs level of execution or `requested execution level.`
+
+The request level options are as follows:
+
+> <i class="icon-info-circled"></i> **Request Levels**
+>  
+*   **As Invoker** –- The application runs with the same access token as the parent process. (Recommended for standard user applications)
+*   **Highest Available ** -– The application runs with the highest privileges the current user can obtain.
+*   **Require Administrator** -– The application runs only for administrators and requires that the application be launched with the full access token of an administrator. (Recommended for administrator only applications)
+*   **No Execution Level Information** -– The application does not have an embeded request execution level manifest.
+
+When making a PAF it can be good practice to embed an application manifest file with a `request execution level`. Operating systems earlier than Windows Vista ignore the required execution level specified in the application's manifest.
+
+The benefit of elevating your PAF is that privileges are elevated only once (if necessary) and these privileges are inherited by all of the process' that are executed from your PAF without requiring multiple elevation prompts. In most cases, running an application with elevated privileges on Windows Vista and above is not recommended and as such you should really try to just use `asInvoker` where you can.
+
+> <i class="icon-attention-circled"></i> **Attention!**
+> Unless an application is designed to be run exclusively by system administrators, it should be run with the least privileges possible.
+
+### No Execution
+On Windows Vista and above, when no execution level information is set in the application's manifest and the application is not elevated previously the application runs in "legacy mode" for backwards compatibility support. In this mode the operating system uses a `virtualization mechanism` for the _file system_ and _registry_ to access. This means that its attempt to create or change files in restricted folder locations or to write in registry restricted hives is redirected (reflected) towards a "per-user" accessible location. See [VirtualStore](docs/getting-started/virtualstore "VirtualStore") for more information on how this applies here.
+### Heuristic
+*Windows Vista* or above _heuristically detects_ installation, updater, uninstallation programs and requests administrator credentials or administrator approval in order to run with access privileges. This heuristic detection checks such attributes like: file names, keywords, versioning resources, etc. (e.g. keywords like: "install", "setup", "update", etc.). Note that this detection heuristic applies only if you do not add `requested execution level` information to the application's manifest. Beware, if you do not set an execution level information your application might be easily mistaken as an application that needs administrator privileges.
+
+## Manifests
+Below is the code needed for adding a manifest in your PAF. This code should go somewhere within `PortableApps.comLauncher.nsi` towards the beginning of the file. You can download the required files to use this code for your PAFs just below the example code. These files should be placed in a folder called _Manifests_ inside the _Contrib_ directory in the NSIS application folder. So if you are using this with your _NSISPortable_, then the full filepath would look like the following: `X:\PortableApps\NSISPortable\App\NSIS\Contrib\Manifests`
+
+## Example
+```NSIS
+;!define RequestLevel User
+;!define RequestLevel Admin
+!define ResHacker    `${NSISDIR}\Contrib\Manifests\ResHacker.exe`
+!define ManifDir     `${NSISDIR}\Contrib\Manifests`
+!define Manifest     `NSIS_2.46_Win8`
+!packhdr             `$%TEMP%\exehead.tmp` `"${Reshacker}" -addoverwrite "%TEMP%\exehead.tmp", "%TEMP%\exehead.tmp", "${ManifDir}\${Manifest}_${RequestLevel}.manifest", 24,1,1033`
+```
+
+You would uncomment line 1 or line 2 depending on your particular needs. Remember to try and use `asInvoker` or User when possible.
+
+> <i class="icon-download"></i> Downloads
+
+> - [Manifests](http://softables.tk/docs/advanced/uac?download=abbeade9b3be011ed60582bffc29347e&link=false "Manifests Archive | Softables.tk/")

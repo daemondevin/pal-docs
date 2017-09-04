@@ -1,0 +1,76 @@
+
+Topic 4.5 <i class="icon-docs"></i>
+
+----------
+
+**Table of Contents <i class="icon-sitemap"></i>**
+
+[TOC]
+
+----------
+
+# Scheduled Tasks
+Windows has a feature-rich task scheduler called Task Scheduler; Microsoft isn't really known for their ability to name things but it does get the point across. It shows you all the tasks scheduled in Windows—tasks you create yourself as well as system tasks and tasks created during the installation of various programs. You can use the guidelines outlined on this page to help your PAF when working with an application that creates a Windows task during it's usage.
+
+## Example
+> With the PA.c Launcher that I'm currently developing I have eliminated the need to use the `custom.nsh` file to handle Windows Tasks. You can visit the GitHub project page [here](https://github.com/demondevin/portableapps.comlauncher#features) which will take you to the features section of the read me file for more information.
+
+If you are using my variant of PAL than you can just specify the key `TaskCleanup` in `AppInfo.ini` with the value true. After that you can add the section `[TaskCleanup]` to the `Launcher.ini` file. Each entry should be the Windows Task name to be removed. Example usage:
+
+```ini
+[TaskCleanup]
+1=MyAppTask1
+2=Another Task w/ Spaces
+```
+## Custom Code
+Usually under normal circumstances you should only need to delete a task somewhere in `${SegmentPost}` or `${SegmentPostPrimary}` but there might be a situation that calls for further action. For those situations keep reading past this next function. To delete a task you can make use of this function I wrote. What it does is deletes the task and if successful, alerts the user only once then writes a key to `AppNamePortableSettings.ini` located in `Data\settings` (the key being `Notified`) with the value of `true` which it can then check for it's value every launch thereafter. If unsuccessful, it alerts the user that it failed to remove the task and suggests manual removal instead.
+
+```nsis
+;=#
+;= Define the name of your task
+!define TASK			`Task Name`
+
+;=#
+;= Be sure to put this somewhere above ${SegmentFile} in your custom.nsh file.
+Function DeleteTask
+    !define TaskGUID    `{148BD52A-A2AB-11CE-B11F-00AA00530503}`
+    !define ITaskGUID   `{148BD527-A2AB-11CE-B11F-00AA00530503}`
+    !define OLE         `ole32::CoCreateInstance(g"${TaskGUID}",`
+    !define OLE32       `${OLE}i0,i11,g "${ITaskGUID}",*i.r1)i.r2`
+    !define DeleteTask "!insertmacro _DeleteTask"
+    !macro _DeleteTask _RESULT _TASK
+        Push ${_Task}
+        Call DeleteTask 
+        Pop ${_RESULT}
+    !macroend
+    Exch $0
+    Push $0
+    Push $1
+    Push $2
+    Push $3
+    StrCpy $3 false
+    System::Call `${OLE32}`
+    IntCmp $2 0 0 +5
+    System::Call "$1->7(w r0)i.r2"
+    IntCmp $2 0 0 +3
+    System::Call "$1->2()"
+    StrCpy $3 true
+    Pop $2
+    Pop $1
+    Pop $0
+    Exch $3
+FunctionEnd
+
+;=#
+;= USAGE
+; ${DeleteTask} $0 "Task Name"
+; If the task's name contains a space, be sure to wrap it in double quotes.
+; $0 Should return either true on success or false on failure.
+${DeleteTask} $0 ${TASK} 
+StrCmpS $0 true 0 +5
+ReadINIStr $1 `$EXEDIR\Data\settings\$BaseNameSettings.ini` $BaseNameSettings Notified
+StrCmpS $1 true +4 0
+WriteINIStr `$EXEDIR\Data\settings\$BaseNameSettings.ini` $BaseNameSettings Notified true
+MessageBox MB_OK|MB_ICONEXCLAMATION|MB_TOPMOST "A Windows Task was created during your use of $AppNamePortable. You will only see this message once.$\r$\n$\r$\nThe task ${TASK} was successfully deleted."
+MessageBox MB_ICONEXCLAMATION|MB_TOPMOST "A Windows Task was created during your use of $AppNamePortable. You will only see this message once.$\r$\n$\r$\nThis task (${TASK}) has failed to be removed.$\r$\nManual removal is required."
+```
