@@ -2,9 +2,9 @@
 # <i class="icon-book"></i> The PAF Docs
 
 ## Preface <i class="icon-help-circled"></i>
-The documentation you will find here is (or will be over time) a collection of help files and guides mostly focused on the making of `PAFs`[^PAF]. Because I am only just one man who has to live outside of my computer, this will take sometime to finish (if ever) so please forgive me on it's incompleteness. This will also serve as a reference/cheat-sheet for those who need a quick reminder on certain functions and macros for use within the `custom.nsh` file.
+The documentation you will find here is (or will be over time) a collection of help files and guides mostly focused on the making of `PAFs` (short for and refers to a portable application that adheres to and complies with the <a href="http://portableapps.com/manuals/PortableApps.comLauncher/ref/paf/index.html#paf" target="_blank" title="PortableApps.com Format™ Specification">*PortableApps.com Format™*</a>. I'll be using `PAF` as the term in reference to *PortableApps.com Format* henceforth). Because I am only just one man who has to live outside of my computer, this will take sometime to finish (if ever) so please forgive me on it's incompleteness. This will also serve as a reference/cheat-sheet for those who need a quick reminder on certain functions and macros for use within the `custom.nsh` file.
 
-I've started this project because, in my humble opinion, the official documentation which is supplied with `PAL`[^PAL] by [PA.c](http://portableapps.com/%22PortableApps.com%22)[^PA.c] doesn't have any solid information on the power and complexities it's framework has. So I've taken it upon myself to begin working on this *unofficial* (but my official) guide to making a `PAF` with `PAL`. 
+I've started this project because, in my humble opinion, the official documentation which is supplied with `PAL` (an acronym for <a href="http://portableapps.com/apps/development/portableapps.com_launcher" target="_blank">*PortableApps.com Launcher*</a>. From now on, I'll be using the term `PAL` in reference to the *PortableApps.com Launcher*) by [PA.c](http://portableapps.com/%22PortableApps.com%22)(an acronym for <a href="http://portableapps.com/" target="_blank">*PortableApps.com*</a>. From now on, I'll be using the term `PA.c` to reference *PortableApps.com*.) doesn't have any solid information on the power and complexities it's framework has. So I've taken it upon myself to begin working on this *unofficial* (but my official) guide to making a `PAF` with `PAL`. 
 
 I assume that you've read and gone over the [official documentation](https://portableapps.com/manuals/PortableApps.comLauncher/%22PortableApps.com%20Launcher%20Documentation%22) because if you haven't than you're going to have a rough time understanding certain topics that I'll be discussing here considering I will be referencing concepts and practices from their help files. If you have not read or at least skimmed through the official documentation than I suggest you do so however if you haven't, I have linked to the topics on these tutorial pages to the topics on the official online documentation for quick access for your convenience.
 
@@ -33,9 +33,3 @@ For a more up-to-date version of these guidelines, visit my website where you ca
 
 > Maintained by demon.devin (<demon.devin@softables.tk>)
 > *I live to create, design, & code.*
-
-[^PAF]: `PAF` &mdash; short for and refers to a portable application that adheres to and complies with the <a href="http://portableapps.com/manuals/PortableApps.comLauncher/ref/paf/index.html#paf" target="_blank" title="PortableApps.com Format™ Specification">*PortableApps.com Format™*</a>. I'll be using `PAF` as the term in reference to *PortableApps.com Format* henceforth.
-
-[^PAL]: `PAL` &mdash; an acronym for <a href="http://portableapps.com/apps/development/portableapps.com_launcher" target="_blank">*PortableApps.com Launcher*</a>. From now on, I'll be using the term `PAL` in reference to the *PortableApps.com Launcher*.
-
-[^PA.c]: `PA.c` &mdash; an acronym for <a href="http://portableapps.com/" target="_blank">*PortableApps.com*</a>. From now on, I'll be using the term `PA.c` to reference *PortableApps.com*.
