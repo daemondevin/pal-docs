@@ -31,7 +31,7 @@ I use a modified variant of PAL which I'm currently developing. You can visit th
 ## Official Docs <i class="icon-book"></i>
 For a more up-to-date version of these guidelines, visit my website where you can view these pages on a real user-friendly interface! Trust me, it's much more aesthetically pleasing to the eye.
 
-[The Official 'Unofficial' PAF Docs](http://softables.tk/docs%22The%20PAF%20Docs%20on%20Softables.tk/%22)
+[The Official 'Unofficial' PAF Docs](http://softables.tk/docs "The PAF Docs at Softables.tk/")
 
 > Maintained by demon.devin (<demon.devin@softables.tk>)
 > *I live to create, design, & code.*
