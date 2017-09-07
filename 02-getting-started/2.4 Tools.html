@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=1024, initial-scale=1"/>
+  <meta name="title" content="2.4 Tools | The PAF Docs"/>
+  <meta name="author" content="demon.devin"/>
+  <meta name="lang" content="en"/>
+  <title>
+   2.4 Tools | The PAF Docs
+  </title>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'/>
+  <link href="../css/docs.css" rel="stylesheet" type="text/css" data-instant-track/>
+  <link href="../css/extend.css" rel="stylesheet" type="text/css" data-instant-track/>
+  <link href="../css/portacons.css" rel="stylesheet" type="text/css" data-instant-track/>
+  <link rel='stylesheet prefetch' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'/>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+  <script type="text/javascript" src="../js/jquery.fancybox.js"></script>
+  <link rel="stylesheet" href="../css/vsdark.css" type="text/css"/>
+  <script src="../js/highlight.pack.js" data-no-instant></script>
+  <script data-no-instant>hljs.initHighlightingOnLoad();</script>
+   </head>
+     <div class='wrapper'>
+      <main class="main isOpen" role="main">
+       <div class='holder'>
+        <div class="content">
+         <div class="heading">
+          <div class='issue'>
+           <p>Topic <span>2.4</span></p>
+          </div>
+          <article role="article">
+           <h1 id="tools-of-the-trade">Tools of the Trade</h1>
+
+<p>This here is a list of software that I use to make portable applications. These are just what I use and while they’re good for what I look for in making PAFs, the same might not be so for you. As you get more experienced, you’ll find tools to your liking in which you’ll use in place of these.</p>
+
+
+
+<h2 id="nsis">NSIS</h2>
+
+<p>The heart and soul of every portable application. Well, any PortableApps.comFormat compliant application anyway. NSIS is a professional open source system to create standard Windows installers as well as the portable launchers we’ll be discussing here. Visit the <a href="http://nsis.sourceforge.net/Main_Page">homepage</a>&nbsp;and download the installer or get the <a href="https://portableapps.com/apps/development/nsis_portable">portable version</a> by PortableApps.com. <a href="http://nsis.sourceforge.net/Reg2Nsis_-_convert_registry_info_into_NSIS_commands">Reg2NSIS</a> is a small utility which converts .reg files into usable NSIS code but more on this later.</p>
+
+<hr>
+
+<h2 id="total-uninstall">Total Uninstall</h2>
+
+<p>This application helps to monitor any changes made to your system during the installation of a new program. It allows you to take a snapshot of your system prior to installing a new program. It then takes an additional snapshot after the installation has completed after which compares the two snapshots and displays all changes in a graphical tree view, marking all registry values and/or files that have been added, changed or deleted. Total Uninstall saves these changes for later review. Visit their <a href="http://www.martau.com/document/total-uninstall.php">support documentation</a> for more information. You can download the portable version<sup class="tool-tip"><a href="#fn:tu" id="fnref:tu" title="See footnote" class="footnote">1</a></sup> of Total Uninstall that I use <a href="https://files.mycloud.com/home.php?brand=webfiles&amp;seuuid=bde41eeb7e8ec9eef82babf346a79961&amp;name=TUPortable_6.18.Rev1.paf_2">here</a>.</p>
+
+<hr>
+
+
+
+<h2 id="notepad">Notepad++</h2>
+
+<p><a href="https://notepad-plus-plus.org/" title="Official Notepad++ Website">Notepad++</a> is a free source code editor and Notepad replacement that supports several languages including NSIS. With this application you are sure to increase your PAF making productivity, I know I do. You can find the official  portable version released by PA.c <a href="https://portableapps.com/apps/development/notepadpp_portable" title="Notepad++ Portable by PA.c">here</a> or you can use my portable version of Notepad++ which is a much better portable version than PA.c’s version. Visit the <a href="https://github.com/demondevin/Notepad-Deux-Plus-Portable" title="demon.devin's Notepad++ Portable GitHub Project Page">GitHub Project Page</a> for more about my portable version of Notepad++. </p>
+
+<p>Some plugins you should consider using with Notepad++ are as follows:</p>
+
+<blockquote>
+  <ul>
+  <li><strong>NppExec</strong> — enables you to run commands/programs directly from within Notepad++. </li>
+  <li><strong>Explorer</strong> — for it’s <em>NppExec</em> script support<sup class="tool-tip"><a href="#fn:plugin" id="fnref:plugin" title="See footnote" class="footnote">2</a></sup>.</li>
+  <li><strong>TextFX</strong> — has many useful functions to aid in your productivity.</li>
+  <li><strong>Language Help</strong> — when configured properly, can enable you to highlight any word and launch a corresponding <code>.chm</code> or other help file to the highlighted selections topic.</li>
+  </ul>
+</blockquote>
+
+<hr>
+
+
+
+<h2 id="icofx">IcoFX</h2>
+
+<p><a href="http://icofx.ro/">IcoFX</a> is a professional icon and cursor editor for Windows. It is an all-in-one solution for icon creation, extraction and editing. I use this tool to extract the applications icons for use with the portable version. Pick up the portable version <a href="https://portableapps.com/apps/graphics_pictures/icofx_portable" title="PA.c IcoFX Portable">here</a> which is released by PA.c.</p>
+
+<hr>
+
+<h2 id="regdllview">RegDLLView</h2>
+
+<p><a href="http://www.nirsoft.net/utils/registered_dll_view.html" title="RegDLLView by Nirsoft">RegDllView</a> is a small utility that displays the list of all registered <code>dll</code>/<code>ocx</code>/<code>exe</code> files (COM registration). For each registered file, you can view the last date/time that it was registered, and the list of all registration entries (<code>CLSID</code>/<code>ProgID</code>). Use this tool to get an idea of what DLL files you’ll need to register for your portable application. Make sure to get both 32bit and 64bit variants. You can probably use some more of <a href="http://www.nirsoft.net/">NirSoft’s Utilities</a>.</p>
+
+<hr>
+
+<h2 id="virtualbox">VirtualBox</h2>
+
+<p>Oracle’s <a href="https://www.virtualbox.org/" title="VirtualBox">VirtualBox</a> is a x86 and AMD64/Intel64 virtualization tool for running Windows, Linux, Macintosh, Solaris, etc. It supports a large number of guest operating systems and is actively developed with frequent releases. So software that you use within a virtual machine won’t interfere with the host operating system. <a href="http://www.vbox.me/" title="Portable-VirtualBox">Portable-VirtualBox</a> offers the same features that VirtualBox does while maintaining its own portable environment. Thus, making this a perfect tool for capturing our applications in a controlled environment. You can find pre-built virtual machines over at the <a href="http://www.oracle.com/technetwork/community/developer-vm/index.html" title="Oracle Tech Network">Oracle Tech Network</a>.</p><div class="footnotes"><hr><ol><li id="fn:tu">This was the last known publicly released <code>PAF</code> by FukenGruven. <a href="#fnref:tu" title="Return to article" class="reversefootnote">↩</a></li><li id="fn:plugin">With both the <em>NppExec</em> and <em>Explorer</em> plugins, your PAF environment can become much more easier on you (i.e. <em>Explorer’s</em> <em>NppExec</em> support can be accessed from within the <em>Explorer’s</em> window pane via the context menu) <a href="#fnref:plugin" title="Return to article" class="reversefootnote">↩</a></li></ol></div>
+          </article>
+          </div>
+         </div>
+        </div>
+       </main>
+          <div class="aholder">
+           <aside class="jtaSidebar-cont">
+            <div class="jtaSidebar">
+             <div class="jtaSidebar-inner">
+              <nav class="float-links">
+               <ul><li><i class="fa">&#xf0a8;</i> <b>Previous Topic:</b><br /><a class="n" href="../01-paf-docs/2.3 Virtualization.html" title="Preface">Preface</a></li> <li><i class="fa">&#xf015;</i> <b>Parent Topic:</b><br /><a class="n" href="2.1 To Begin.html" title="Getting Started">Getting Started</a></li> <li><i class="fa">&#xf0a9;</i> <b>Next Topic:</b><br /><a class="n" href="2.5 Outline.html" title="Advantages">Advantages</a></li></ul>
+              </nav>
+             </div>
+             <div class="jtaSidebar-inner anchors-away" style="width: 169px;">
+             </div>
+            </div>
+           </aside>
+          </div>
+         </div>
+<script type="text/javascript" src="../js/jquery.cycle.all.min.js"></script>
+       <script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
+       <script type="text/javascript" src="../js/jquery.flexslider-min.js"></script>
+       <script type="text/javascript" src="../js/flexslider.js"></script>
+       <script type="text/javascript" src="../js/jquery.easing-1.3.pack.js"></script>
+       <script type="text/javascript" src="../js/extend.js" data-instant-track></script>
+      <script type="text/javascript" src="../js/docs.js" data-instant-track></script>
+ </body>
+</html>

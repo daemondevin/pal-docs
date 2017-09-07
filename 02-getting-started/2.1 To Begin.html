@@ -66,39 +66,24 @@
 
 <p>People need to be aware about the different variations in terminology when it comes to the word portable in regards to software. Many people are using certain keywords out of context and/or with misguided attempts to convey subject matter. The following programming vernacular is a short list of definitions on the vocabulary as I’ve come to understand them with respect to portable applications.</p>
 
-<blockquote>
-  <h3 id="paf">PAF</h3>
-  
-  <p>Probably the most well-known term in this genre as well as probably the most misused term too. This acronym is often abused to describe any portable application most of the time, however not every portable and/or stealth application is automatically a PAF. PAF really means PortableApps.com Format and is supposed to be governed by PortableApps.com for best practices.</p>
-  
-  <p>The standard is supposed to mean that a portable application is made with quality and assures the end-user of its completeness and clean up procedures. Sadly, as many novice developers are more concerned with just the program launching instead of what it truly means to be portable and cleaning up on exit, the word has lost its meaning. This is mainly due to the ease of use when using PA.c Launcher to create a portable application as you just need to edit a few .ini files and do not need to know any programming.</p>
-  
-  <p>Moreover, the PA.c format is basically a design preference a developer chooses to employ when creating portable software. The PA.c standard stipulates a certain folder structure and a dedicated location for the launcher to store all saved data to retain the application’s settings. There are many other formats like this one but this format is the mainstream which people usually use in reference to other portable providers like LiberKey and so on.   </p>
-</blockquote>
-
-<p><br></p>
-
-<blockquote>
-  <h3 id="stealth">Stealth</h3>
-  
-  <p>This is often confused with the idea of a program being untraceable. Stealth does not mean flying in stealth-mode like a F-117 Nighthawk which is designed to avoid detection. As far as I’m aware, software doesn’t have capabilities to be undetectable. A technical savvy administrator can find traces of your activities on a Windows based PC. <em>Stealth</em>, in regards to software, just means when an application is launched from a well-developed wrapper/launcher, it does not leave behind any entries in the registry or file system.</p>
-  
-  <p>Although, exceptions are understandable as Windows uses registry entries that are created/updated by the application (<em>e.g.</em> MRU entries for dialogue boxes, DirectX entries for DirectX-based programs, etc.). Temporary files which are created in the designated system <code>%TEMP%</code> folders are not taken into consideration either.</p>
-  
-  <p>Stealth does mean completely portable. Everything is factored in the launcher so nothing is ever left behind on the host machine.</p>
-</blockquote>
-
-<p><br></p>
-
-<blockquote>
-  <h3 id="virtual">Virtual</h3>
-  
-  <p>Virtual applications are programs that are optimized to run in a virtual environment. Simply put, a virtual application simply runs on a computer without being installed on it, just like in the above instances. Remote applications are a popular virtual application delivery solution which allows the virtual applications installed on a server to be delivered to an end-users’ machine. These applications are not installed on the end-user’s device; instead, speciality software called a client is installed on the device that connects to the server and the application is then presented as screenshots to the end-user’s machine.</p>
-  
-  <p>Application streaming is the process which the application’s resources are carried to the endpoint at the time of its execution. VMware ThinApp is an example of an agentless application virtualization solution, while Microsoft App-V represents an agent-based virtual application solution. Parallels Remote Application Server, Citrix, and VMware are the leading providers of application virtualization solutions and are the standards in this category.</p>
-  
-  <p>There are several other virtualization solutions such as portable applications which is what we’re discussing here. These virtualized portable applications will encapsulate all files/DLLs and registry information in one standalone executable file. Thus allowing the end-user to copy and move the application in one single file and carried with them on any removable media device.</p>
-</blockquote>
+<div class="box shadow">
+<div class="box-content">
+ <h3>PAF</h3>
+ Probably the most well-known term in this genre as well as probably the most misused term too. This acronym is often abused to describe any portable application most of the time, however not every portable and/or stealth application is automatically a <code>PAF</code>. <code>PAF</code> really means <em>PortableApps.com Format</em> and is supposed to be governed by PortableApps.com for best practices.<br /><br />The standard is supposed to mean that a portable application is made with quality and assures the end-user of its completeness and clean up procedures. Sadly, as many novice developers are more concerned with just the program launching instead of what it truly means to be portable and cleaning up on exit, the word has lost its meaning. This is mainly due to the ease of use when using PA.c Launcher to create a portable application as you just need to edit a few <code>.ini</code> files and do not need to know any programming.<br /><br />Moreover, the PA.c format is basically a design preference a developer chooses to employ when creating portable software. The PA.c standard stipulates a certain folder structure and a dedicated location for the <em>launcher</em> to store all saved data to retain the application's settings. There are many other formats like this one but this format is the mainstream which people usually use in reference to other portable providers like LiberKey and so on.
+</div>
+</div>
+<div class="box shadow">
+<div class="box-content">
+ <h3>Stealth</h3>
+ This is often confused with the idea of a program being untraceable. Stealth does not mean flying in stealth-mode like a F-117 Nighthawk which is designed to avoid detection. As far as I'm aware, software doesn't have capabilities to be undetectable. A technical savvy administrator can find traces of your activities on a Windows based PC. <em>Stealth</em>, in regards to software, just means when an application is launched from a well-developed wrapper/launcher, it does not leave behind any entries in the registry or file system.<br /><br />Although, exceptions are understandable as Windows uses registry entries that are created/updated by the application (<abbr>e.g.</abbr> MRU entries for dialogue boxes, <em>DirectX</em> entries for DirectX-based programs, etc.). Temporary files which are created in the designated system <code>%TEMP%</code> folders are not taken into consideration either.<br /><br />Stealth does mean completely portable. Everything is factored in the <em>launcher</em> so nothing is ever left behind on the host machine.
+</div>
+</div>
+<div class="box shadow">
+<div class="box-content">
+ <h3>Virtual</h3>
+ Virtual applications are programs that are optimized to run in a virtual environment. Simply put, a virtual application simply runs on a computer without being installed on it, just like in the above instances. Remote applications are a popular virtual application delivery solution which allows the virtual applications installed on a server to be delivered to an end-users' machine. These applications are not installed on the end-user's device; instead, speciality software called a client is installed on the device that connects to the server and the application is then presented as <em>screenshots</em> to the end-user's machine.<br /><br />Application streaming is the process which the application's resources are carried to the endpoint at the time of its execution. VMware ThinApp is an example of an agent-less application virtualization solution, while Microsoft App-V represents an agent-based virtual application solution. Parallels Remote Application Server, Citrix, and VMware are the leading providers of application virtualization solutions and are the standards in this category.<br /><br />There are several other virtualization solutions such as portable applications which is what we're discussing here. These virtualized portable applications will encapsulate all files/DLLs and registry information in one standalone executable file. Thus allowing the end-user to copy and move the application in one single file and carried with them on any removable media device.
+</div>
+</div>
 
 <hr>
           </article>

@@ -958,6 +958,10 @@ h2 {
   margin-left: -5px;
 }
 
+h3 {
+  font-size: 1.8em;
+}
+
 .holder {
 	width: 730px;
 	float: left;
