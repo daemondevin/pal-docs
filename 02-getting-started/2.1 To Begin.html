@@ -49,6 +49,58 @@
 <p>He goes on to say he preferred <em>Spoon Studio</em> over <em>ThinApp</em> because the finished product’s size was smaller, a bit faster, and had greater support for 64-bit compatibility. If I remember correctly <em>Spoon Studio</em> also won’t force you to use a splash screen either. If you’d like to see what he’s talking about you can get <em>Spoon Studio 2012</em> <a href="https://drive.google.com/open?id=0BzxQv18jVnTTU0cyM2M1UkhINjA" title="Spoon Studio">here</a> and <em>ThinApp Enterprise</em> <a href="https://files.mycloud.com/home.php?brand=webfiles&amp;seuuid=3f471c7c8b22e202e949decec8c8823c&amp;name=ThinAppPortable_5.2.2_English.paf" title="ThinApp Enterprise">here</a>.</p>
 
 <p>Don’t get me wrong though; virtualization is a good mechanism for getting familiar with the practice. However, as you retain more knowledge you’ll come to see virtualization has both it’s upsides and it’s downsides. More on this topic can be found <a href="docs/getting-started/virtualization" title="Virtualization">here</a>.</p><hr>
+
+<h2 id="portablestealth">Portable/Stealth</h2>
+
+<p>First, let’s review what portable means when it pertains to a program. A portable application is software designed to be easily moved from one computer to the next. A portable application is mostly designed for use with USB drives but isn’t limited to just removable media. They can also be used from cloud storage services giving it true meaning to portable software as they are used on any compatible device, wherever the end-user is working from.</p>
+
+<p>Portable programs are not installed on a computer and won’t store any configuration information on the host machine as all data is usually self-contained within it’s own directory. In the end, portable applications are created for compatibility with specific operating systems. The portability in portable software refers to the way they can be physically carried from one place to another, not interoperability among different computers.</p>
+
+<p>Software portability is a different concept entirely which involves programming techniques using certain compilers/services to wrap or create a launcher for the main program itself. This portability launcher or wrapper is a characteristic attributed to a computer program if it can be used in an operating systems other than the one in which the main program was created for without requiring any major revisions.</p>
+
+<p>Porting is the task of doing any work necessary to make the computer program run in the new environment without fault. The portable wrapper/launcher should clean up any and all data it added to the host PC on exit. When using the program, an end-user should feel as though they are using a program that is installed without limitations then close the program keeping the illusion that it is running without dependencies from the host PC. This is the mainstream conception when people are talking/referring creating/using an application to be portable.</p>
+
+<hr>
+
+<h2 id="terminology">Terminology</h2>
+
+<p>People need to be aware about the different variations in terminology when it comes to the word portable in regards to software. Many people are using certain keywords out of context and/or with misguided attempts to convey subject matter. The following programming vernacular is a short list of definitions on the vocabulary as I’ve come to understand them with respect to portable applications.</p>
+
+<blockquote>
+  <h3 id="paf">PAF</h3>
+  
+  <p>Probably the most well-known term in this genre as well as probably the most misused term too. This acronym is often abused to describe any portable application most of the time, however not every portable and/or stealth application is automatically a PAF. PAF really means PortableApps.com Format and is supposed to be governed by PortableApps.com for best practices.</p>
+  
+  <p>The standard is supposed to mean that a portable application is made with quality and assures the end-user of its completeness and clean up procedures. Sadly, as many novice developers are more concerned with just the program launching instead of what it truly means to be portable and cleaning up on exit, the word has lost its meaning. This is mainly due to the ease of use when using PA.c Launcher to create a portable application as you just need to edit a few .ini files and do not need to know any programming.</p>
+  
+  <p>Moreover, the PA.c format is basically a design preference a developer chooses to employ when creating portable software. The PA.c standard stipulates a certain folder structure and a dedicated location for the launcher to store all saved data to retain the application’s settings. There are many other formats like this one but this format is the mainstream which people usually use in reference to other portable providers like LiberKey and so on.   </p>
+</blockquote>
+
+<p><br></p>
+
+<blockquote>
+  <h3 id="stealth">Stealth</h3>
+  
+  <p>This is often confused with the idea of a program being untraceable. Stealth does not mean flying in stealth-mode like a F-117 Nighthawk which is designed to avoid detection. As far as I’m aware, software doesn’t have capabilities to be undetectable. A technical savvy administrator can find traces of your activities on a Windows based PC. <em>Stealth</em>, in regards to software, just means when an application is launched from a well-developed wrapper/launcher, it does not leave behind any entries in the registry or file system.</p>
+  
+  <p>Although, exceptions are understandable as Windows uses registry entries that are created/updated by the application (<em>e.g.</em> MRU entries for dialogue boxes, DirectX entries for DirectX-based programs, etc.). Temporary files which are created in the designated system <code>%TEMP%</code> folders are not taken into consideration either.</p>
+  
+  <p>Stealth does mean completely portable. Everything is factored in the launcher so nothing is ever left behind on the host machine.</p>
+</blockquote>
+
+<p><br></p>
+
+<blockquote>
+  <h3 id="virtual">Virtual</h3>
+  
+  <p>Virtual applications are programs that are optimized to run in a virtual environment. Simply put, a virtual application simply runs on a computer without being installed on it, just like in the above instances. Remote applications are a popular virtual application delivery solution which allows the virtual applications installed on a server to be delivered to an end-users’ machine. These applications are not installed on the end-user’s device; instead, speciality software called a client is installed on the device that connects to the server and the application is then presented as screenshots to the end-user’s machine.</p>
+  
+  <p>Application streaming is the process which the application’s resources are carried to the endpoint at the time of its execution. VMware ThinApp is an example of an agentless application virtualization solution, while Microsoft App-V represents an agent-based virtual application solution. Parallels Remote Application Server, Citrix, and VMware are the leading providers of application virtualization solutions and are the standards in this category.</p>
+  
+  <p>There are several other virtualization solutions such as portable applications which is what we’re discussing here. These virtualized portable applications will encapsulate all files/DLLs and registry information in one standalone executable file. Thus allowing the end-user to copy and move the application in one single file and carried with them on any removable media device.</p>
+</blockquote>
+
+<hr>
           </article>
           </div>
          </div>
@@ -68,12 +120,12 @@
            </aside>
           </div>
          </div>
-<script type="text/javascript" src="../js/jquery.cycle.all.min.js"></script>
+       <script type="text/javascript" src="../js/jquery.cycle.all.min.js"></script>
        <script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
        <script type="text/javascript" src="../js/jquery.flexslider-min.js"></script>
        <script type="text/javascript" src="../js/flexslider.js"></script>
        <script type="text/javascript" src="../js/jquery.easing-1.3.pack.js"></script>
        <script type="text/javascript" src="../js/extend.js" data-instant-track></script>
-      <script type="text/javascript" src="../js/docs.js" data-instant-track></script>
+       <script type="text/javascript" src="../js/docs.js" data-instant-track></script>
  </body>
 </html>
