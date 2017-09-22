@@ -1,40 +1,33 @@
----
-layout: default
----
-
-<div class="profile">
-	{% if site.logourl != "" %}<img src="{{ site.logourl }}" class="profileimage" alt="user">{% endif %}
-	<h4>{{ site.title }}</h4>
-	<p>{{ site.description }}</p>
-	<hr>
-</div>
-
-<section class="posts postindex wrapper">
-
-	{% for post in paginator.posts %}
-		<article class="post {% if post.featured == true %} featured {% endif %}">
-			<header>
-				<div class="feature"><span>Featured</span><i class="fa fa-bookmark fa-lg"></i></div>
-				<h2>
-					{% for category in post.categories %}
-					{{ category }} 
-					{% endfor %}
-				</h2>
-				<h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
-				<span>
-					Posted on <i class="fa fa-clock-o"></i><time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %-d, %Y" }}</time>.
-				</span>
-				<div class="excerpt">
-					{% if post.content contains '<!--more-->' %}
-						{{ post.content | split:'<!--more-->' | first }}
-					{% else %}
-						{{ post.content }}   
-					{% endif %}
-				</div>
-			</header>
-		</article>
-	{% endfor %}
-
-	{% include pagination.html %}
-
-</section>
+          <h5><a name="welcome" class="heading"href="docs/preface#welcome">Welcome</a></h5>
+          <p>The documentation you will find here is (or will be over time) a collection of help files and guides mostly focused on the making of <span class="tooltip"><abbr>pafs</abbr><span class="tooltip-box" style="display: none; bottom: 35px;">Short for and refers to a portable application that adheres to and complies with the PortableApps.com Format™. Read <a href="http://portableapps.com/manuals/PortableApps.comLauncher/ref/paf/index.html#paf" target="_blank" title="PortableApps.com Format™ Specification">this</a> for more.<br><br>I'll be using this term in reference henceforth.<span class="tooltip-arrow"></span></span></span> . Because I am only just one man who has to live outside of my computer, this will take sometime to finish (if ever) so please forgive me on it's incompleteness. This will also serve as a reference/cheat-sheet for those (I know I'll need it, which is partly why I've started this) who need a quick reminder on certain functions and macros for use within the <code>custom.nsh</code> file.</p>
+            <p>I've started this because the documentation which is supplied with <span class="tooltip"><abbr>pal</abbr><span class="tooltip-box">Again for this site, I'll be using PAL in reference to <a href="http://portableapps.com/apps/development/portableapps.com_launcher" target="_blank">PortableApps.com Launcher</a> from now on.<span class="tooltip-arrow"></span></span></span> by PortableApps.com doesn't have, in my opinion, any solid information on the power and complexities it's framework has. So I've taken it upon myself to begin working on this unofficial guide to making a PAF with PAL. I assume that you've read and gone over the <a href"https://portableapps.com/manuals/PortableApps.comLauncher/" title="PA.c Launcher's Online Documentation" target="_blank">offical documentation</a> because if you haven't then you're going to have a rough time understanding certain topics that I'll be discussing considering I will be referencing from it as well.</p>
+            <h5><a name="enthusiasts" class="heading"href="docs/preface#enthusiasts">Enthusiasts</a></h5>
+            <p>Aside from the growing populous at PortableApps.com, there is a small <a href="https://discord.gg/ExKbgXg" target="_blank" title="PAF Community">community of enthusiasts</a> on the <a href="https://discordapp.com/" target="_blank">Discord</a> chat platform that will be more then happy to help answer any of the questions that may arise during your quest for PAF enlightenment if you cannot find what you are looking for here.</p>
+            <div class="box bio">
+             <div class="box-content">
+              I apologize about the floating navigation box to the right. It's supposed to be dynamically handled however I haven't gotten all the kinks worked out just yet. Worry not, I'm sure you already seen my big green arrow which came at you unexpectedly like that of Thor's hammer.. ...but if you haven't there's a little hamburger-styled icon up in the very top, left&ndash;most corner you can click for a better display of the navigation tree.
+             </div>
+            </div>
+            <h5><a name="toolsets" class="heading"href="docs/preface#toolsets">A PAFers Lineup</a></h5>
+            <p>If you haven't already, download the required applications and files you will need before you proceed with making a PAF with this site. Grab a build of PortableApps.com Installer, PortableApps.com Launcher Generator, and a build of NSIS Portable, you can find the download links to these files below.</p>
+            <p> I use a modified variant of PAL which I'm currently developing. You can visit the GitHub project page <a class="reference internal" href="https://github.com/demondevin/portableapps.comlauncher" target="_blank">here</a>. It has the makings for better PAF development as the official version hasn't had any updates in several years.</p>
+            <div class="box download">
+             <div class="box-content">
+              <h6>Download</h6>
+              <div class="custom-list list-dot">
+               <ul>
+                <li><a href="https://portableapps.com/apps/development/portableapps.com_installer" target="_blank">PA.c Installer</a></li>
+                <li><a href="https://portableapps.com/apps/development/portableapps.com_launcher" target="_blank">PA.c Launcher</a></li>
+                <li><a href="https://portableapps.com/apps/development/nsis_portable" target="_blank">NSIS Portable</a></li>
+               </ul>
+              </div>
+             </div>
+            </div>
+            <footer>
+             <h1 class="ctitle">Maintained by demon.devin</h1>
+             <p class='author'><span>I live to create, design & code.</span></p>
+            </footer>
+            <br /><br />
+            <footer>
+             <p class='author'><span>Page last modified: <time>August 30, 2017</time></span></p>
+            </footer>
