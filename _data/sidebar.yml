@@ -1,0 +1,80 @@
+docs_nav_title: navigate
+nav:
+  - title: navigate
+    subfolderitems:
+      - page: Preface
+        url: /thing1.html
+      - page: Getting Started
+        url: /thing2.html
+        subsubfolderitems:
+          - page: To Begin
+            url: /subthing1.html
+          - page: Advantages
+            url: /subthing2.html
+          - page: Virtualization
+            url: /subthing2.html
+          - page: Tools
+            url: /subthing2.html
+          - page: Outline
+            url: /subthing2.html
+          - page: Template
+            url: /subthing2.html
+          - page: Paths
+            url: /subthing2.html
+          - page: VirtualStore
+            url: /subthing2.html
+      - page: Basics
+        url: /thing3.html
+        subsubfolderitems:
+          - page: Workspace
+            url: /subthing1.html
+          - page: Snapshots
+            url: /subthing2.html
+          - page: The Registry
+            url: /subthing2.html
+          - page: File System
+            url: /subthing2.html
+          - page: Compile Cmds
+            url: /subthing2.html
+          - page: Macros
+            url: /subthing2.html
+          - page: Functions
+            url: /subthing2.html
+          - page: Labels/Jumps
+            url: /subthing2.html
+      - page: Advanced
+        url: /thing3.html
+        subsubfolderitems:
+          - page: UAC
+            url: /subthing1.html
+          - page: Register DLLs
+            url: /subthing2.html
+          - page: Services
+            url: /subthing2.html
+          - page: DotNET
+            url: /subthing2.html
+          - page: Windows Tasks
+            url: /subthing2.html
+          - page: Useful Snippets
+            url: /subthing2.html
+          - page: Code Signing
+            url: /subthing2.html
+      - page: custom.nsh
+        url: /thing3.html
+        subsubfolderitems:
+          - page: Overview
+            url: /subthing1.html
+      - page: PA.cLauncher.nsi
+        url: /thing3.html
+        subsubfolderitems:
+          - page: Overview
+            url: /subthing1.html
+          - page: Extending
+            url: /subthing2.html
+      - page: Final Touches
+        url: /thing3.html
+        subsubfolderitems:
+          - page: Troubleshoot
+            url: /subthing1.html
+          - page: Thanks
+            url: /subthing2.html
