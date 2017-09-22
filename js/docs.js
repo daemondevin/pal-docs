@@ -249,51 +249,12 @@ nav +=  "</nav>";
 $(".anchors-away").prepend(nav);
 
 
-// String.prototype.repeat = function(num) {
-	// return new Array(num + 1).join(this);
-// }
-// var ToC =
-	// "<nav class='float-links'>" +
-		// "<div class='custom-list list-dot'>" +
-		// "<ul>";
-
-// var newLine, el, name, title, link, level, baseLevel;
-
-// $("article h5, article h6").each(function() {
-
-	// el = $(this);
-	// name = $("a.heading").attr("name");
-	// title = el.text();
-	// link = "#" + el.attr("name");
- 
-	// var prevLevel = level || 0;
-	// level = this.nodeName.substr(1);
-	// if(!baseLevel) { // make sure you start with highest level of heading or it won't work
-		// baseLevel = level;
-	// }
-
-	
- 
-	// if(prevLevel == 0) {
-		// newLine = '<li>';
-	// } else if(level == prevLevel) {
-		// newLine = '</li><li>';
-	// } else if(level > prevLevel) {
-		// newLine = '<ul><li>'.repeat(level - prevLevel);
-	// } else if(level < prevLevel) {
-		// newLine = '</li></ul>'.repeat(prevLevel - level) +
-		// '</li><li>';
-	// }
-	// newLine += "<a href='" + name + "'>" + title + prevLevel + level + "</a>";
-
-	// ToC += newLine;
-
-// });
-
-// ToC += '</li></ul>'.repeat(level - baseLevel) +
-			// "</li>" +
-		// "</ul>" +
-		// "</div>" +
-	// "</nav>";
-
-// $(".anchors-away").prepend(ToC);
+// ANALYTICS
+if(config.analytics_id != '' || config.analytics_id != null || config.analytics_id != undefined){
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', config.analytics_id, config.analytics_domain);
+	ga('send', 'pageview');
+}
