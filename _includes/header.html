@@ -1,12 +1,42 @@
-<header class="title">
-    <a href="{{ site.url }}"><i class="fa {{ site.fa-logo }} fa-lg"></i><span>{{ site.title }}</span></a>
-</header>
-
-<nav class="wrapper {% if page.featured == true %} featured {% endif %} {% if site.theme_always_show_nav == true %} alwaysshow {% endif %}">
-    <a href="#" onclick="return false;"><i class="fa fa-navicon fa-lg"></i></a>
-    <ul>
-        {% for page in site.pages %}
-            {% if page.title %}<li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>{% endif %}
-        {% endfor %}
-    </ul>
-</nav>
+   <header class="menubar">
+    <div class="container">
+     <div id="hamburger-toggle">
+      <div class="hamburger" id="hamburger">
+       <span class="line"></span>
+       <span class="line"></span>
+       <span class="line"></span>
+      </div>
+     </div>
+     <nav>
+      <ul>
+       <li class="login-trigger">
+        <a><i class="icon-login"></i> login</a>
+        <div class="login-content">
+         <form action="login?lounge=login" method="post">
+          <fieldset id="inputs">
+           <div class="form-icon">
+            <i class="fa fa-user"></i>
+            <input id="username" type="text" name="username" placeholder="Username" />
+           </div>
+           <div class="form-icon">
+            <i class="fa fa-key"></i>
+            <input id="password" type="password" name="password" placeholder="Password" />
+           </div>
+          </fieldset>
+          <fieldset id="actions">
+           <label class="rememberme">remember me <input name="rememberme" type="checkbox" checked="checked"/></label>
+           <input type="hidden" value="" name="rememberme" /> <br/>
+           <label class="forgot"><a href="login/forgot-password" class="forgot">forget your password?</a></label>
+           <input class="loginLoginValue" type="hidden" name="lounge" value="login" />
+           <input class="returnUrl" type="hidden" name="returnUrl" value="" />
+           <input type="submit" id="submit" value="&#xf090;" class="button" name="Login"/></fieldset>
+         </form>
+        </div>
+       </li>
+       <li>
+        <a href="login/join"><i class="fa fa-asterisk"></i> sign up</a>
+       </li>
+      </ul>
+     </nav>
+    </div>
+   </header>
