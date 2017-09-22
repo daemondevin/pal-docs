@@ -5,6 +5,7 @@ nav:
       - page: Preface
         url: /thing1.html
       - page: Getting Started
+        submenu: true
         url: /thing2.html
         subsubfolderitems:
           - page: To Begin
@@ -24,6 +25,7 @@ nav:
           - page: VirtualStore
             url: /subthing2.html
       - page: Basics
+        submenu: true
         url: /thing3.html
         subsubfolderitems:
           - page: Workspace
@@ -43,6 +45,7 @@ nav:
           - page: Labels/Jumps
             url: /subthing2.html
       - page: Advanced
+        submenu: true
         url: /thing3.html
         subsubfolderitems:
           - page: UAC
@@ -60,11 +63,13 @@ nav:
           - page: Code Signing
             url: /subthing2.html
       - page: custom.nsh
+        submenu: true
         url: /thing3.html
         subsubfolderitems:
           - page: Overview
             url: /subthing1.html
       - page: PA.cLauncher.nsi
+        submenu: true
         url: /thing3.html
         subsubfolderitems:
           - page: Overview
@@ -72,6 +77,7 @@ nav:
           - page: Extending
             url: /subthing2.html
       - page: Final Touches
+        submenu: true
         url: /thing3.html
         subsubfolderitems:
           - page: Troubleshoot
