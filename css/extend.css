@@ -173,7 +173,7 @@
   font-family: 'portacons' !important;
   /* width: 19px;
   height: 15px;
-  background: url(../img/shortcodes-sprite.png) no-repeat -23px -2px;
+  background: url(/img/shortcodes-sprite.png) no-repeat -23px -2px;
   top: 33px; */
 }
 
@@ -303,7 +303,7 @@
   margin-left: -6px;
   width: 13px;
   height: 10px;
-  background: url(../img/shortcodes-sprite.png) no-repeat -58px -2px;
+  background: url(/img/shortcodes-sprite.png) no-repeat -58px -2px;
 }
 
 .learn-more .open span.learnmore_arrow span {
@@ -354,7 +354,7 @@
 }
 
 .shortcodes_controls a {
-  background: url(../img/shortcodes-sprite.png) no-repeat -45px -1px;
+  background: url(/img/shortcodes-sprite.png) no-repeat -45px -1px;
   width: 11px;
   height: 11px;
   display: inline-block;
@@ -659,43 +659,43 @@ a.icon-button span.icon {
 }
 
 a.download-icon span.icon {
-  background: url(../img/shortcodes-sprite.png) no-repeat -3px -2px;
+  background: url(/img/shortcodes-sprite.png) no-repeat -3px -2px;
   width: 17px;
   height: 20px;
   top: 7px;
 }
 
 a.search-icon span.icon {
-  background: url(../img/shortcodes-sprite.png) no-repeat -206px -2px;
+  background: url(/img/shortcodes-sprite.png) no-repeat -206px -2px;
   top: 9px;
 }
 
 a.refresh-icon span.icon {
-  background: url(../img/shortcodes-sprite.png) no-repeat -169px -19px;
+  background: url(/img/shortcodes-sprite.png) no-repeat -169px -19px;
 }
 
 a.question-icon span.icon {
-  background: url(../img/shortcodes-sprite.png) no-repeat -164px -2px;
+  background: url(/img/shortcodes-sprite.png) no-repeat -164px -2px;
 }
 
 a.people-icon span.icon {
-  background: url(../img/shortcodes-sprite.png) no-repeat -151px -33px;
+  background: url(/img/shortcodes-sprite.png) no-repeat -151px -33px;
   height: 17px;
   top: 9px;
 }
 
 a.warning-icon span.icon {
-  background: url(../img/shortcodes-sprite.png) no-repeat -188px -19px;
+  background: url(/img/shortcodes-sprite.png) no-repeat -188px -19px;
   width: 15px;
 }
 
 a.mail-icon span.icon {
-  background: url(../img/shortcodes-sprite.png) no-repeat -131px -33px;
+  background: url(/img/shortcodes-sprite.png) no-repeat -131px -33px;
   height: 15px;
 }
 
 a.heart-icon span.icon {
-  background: url(../img/shortcodes-sprite.png) no-repeat -131px -18px;
+  background: url(/img/shortcodes-sprite.png) no-repeat -131px -18px;
   width: 14px;
   height: 13px;
   top: 12px;
@@ -703,13 +703,13 @@ a.heart-icon span.icon {
 }
 
 a.paper-icon span.icon {
-  background: url(../img/shortcodes-sprite.png) no-repeat -147px -17px;
+  background: url(/img/shortcodes-sprite.png) no-repeat -147px -17px;
   width: 15px;
   height: 15px;
 }
 
 a.icon-button span.icon.icon-attention {
-  /* background: url(../img/shortcodes-sprite.png) no-repeat -147px -2px; */
+  /* background: url(/img/shortcodes-sprite.png) no-repeat -147px -2px; */
   color: #FF9800;
   text-shadow: 1px 1px 1px #ffffff;
   top: 5px;
@@ -726,14 +726,14 @@ a.icon-button span.icon.icon-info {
 }
 
 a.stats-icon span.icon {
-  background: url(../img/shortcodes-sprite.png) no-repeat -184px -2px;
+  background: url(/img/shortcodes-sprite.png) no-repeat -184px -2px;
   width: 15px;
   height: 14px;
   top: 11px;
 }
 
 a.rss-icon span.icon {
-  background: url(../img/shortcodes-sprite.png) no-repeat -171px -36px;
+  background: url(/img/shortcodes-sprite.png) no-repeat -171px -36px;
   width: 15px;
   top: 9px;
 }
@@ -755,7 +755,7 @@ a.mirrorcreator-icon span.icon {
 }
 
 a.torrent-icon span.icon {
-  background: url(../img/ext/torrent-icon.png) no-repeat 0 0;
+  background: url(/img/ext/torrent-icon.png) no-repeat 0 0;
 }
 
 a.magnet-icon span.icon {
@@ -765,11 +765,11 @@ a.magnet-icon span.icon {
   background: linear-gradient(rgb(255, 255, 255) 20%, rgb(183, 28, 28) 65%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  /*background: url(../img/ext/magnet-icon.png) no-repeat 0 0;*/
+  /*background: url(/img/ext/magnet-icon.png) no-repeat 0 0;*/
 }
 
 a.pdf-icon span.icon {
-  /* background: url(../img/ext/pdf-icon.png) no-repeat 0 0; */
+  /* background: url(/img/ext/pdf-icon.png) no-repeat 0 0; */
   color: #B71C1C;
   text-shadow: 1px 1px 1px #ffffff;
   top: 6px;
@@ -778,7 +778,7 @@ a.pdf-icon span.icon {
   }
   
 a.www-icon span.icon {
-  /* background: url(../img/ext/www-icon.png) no-repeat 0 0; */
+  /* background: url(/img/ext/www-icon.png) no-repeat 0 0; */
   color: #546E7A;
   text-shadow: 1px 1px 1px #ffffff;
   top: 5px;
@@ -803,11 +803,11 @@ ul.shortcodes_mobile_nav span, .shortcodes_controls_arrows span {
 }
 
 ul.shortcodes_mobile_nav .sc_nav_prev span, .shortcodes_controls_arrows .sc_nav_prev span {
-  background: url(../img/shortcodes-sprite.png) no-repeat -3px -24px;
+  background: url(/img/shortcodes-sprite.png) no-repeat -3px -24px;
 }
 
 ul.shortcodes_mobile_nav .sc_nav_next span, .shortcodes_controls_arrows .sc_nav_next span {
-  background: url(../img/shortcodes-sprite.png) no-repeat -3px -40px;
+  background: url(/img/shortcodes-sprite.png) no-repeat -3px -40px;
 }
 
 .tabs-container {
@@ -1145,7 +1145,7 @@ ul.shortcodes_mobile_nav .sc_nav_next span, .shortcodes_controls_arrows .sc_nav_
   position: absolute;
   top: 16px;
   left: 20px;
-  background: url(../img/shortcodes-sprite.png) no-repeat -23px -36px;
+  background: url(/img/shortcodes-sprite.png) no-repeat -23px -36px;
   width: 17px;
   height: 19px;
 }
@@ -1163,7 +1163,7 @@ ul.shortcodes_mobile_nav .sc_nav_next span, .shortcodes_controls_arrows .sc_nav_
   position: absolute;
   top: 2px;
   left: 18px;
-  background: url(../img/shortcodes-sprite.png) no-repeat -190px -37px;
+  background: url(/img/shortcodes-sprite.png) no-repeat -190px -37px;
   display: block;
 }
 
@@ -1409,7 +1409,7 @@ ul.shortcodes_mobile_nav .sc_nav_next span, .shortcodes_controls_arrows .sc_nav_
   left: 30px;
   width: 22px;
   height: 18px;
-  background: url(../img/shortcodes-sprite.png) no-repeat -74px -2px;
+  background: url(/img/shortcodes-sprite.png) no-repeat -74px -2px;
 }
 
 .pricing-table ul.pricing li.x-mark span.pricing-mark {
@@ -1527,11 +1527,11 @@ span.price span.dollar-sign {font-size: 36px;}
   left: 35px;
   width: 25px;
   height: 19px;
-  background: url(../img/shortcodes-sprite.png) no-repeat -45px -35px;
+  background: url(/img/shortcodes-sprite.png) no-repeat -45px -35px;
 }
 
 .t-bottom-arrow {
-  background: url(../img/shortcodes-sprite.png) no-repeat -97px -25px;
+  background: url(/img/shortcodes-sprite.png) no-repeat -97px -25px;
   width: 31px;
   height: 32px;
   position: absolute;
@@ -1556,7 +1556,7 @@ span.price span.dollar-sign {font-size: 36px;}
 }
 
 .quote .quote_sign {
-  background: url(../img/shortcodes-sprite.png) no-repeat -206px -20px;
+  background: url(/img/shortcodes-sprite.png) no-repeat -206px -20px;
   position: absolute;
   top: 0;
   left: 0;
@@ -1573,7 +1573,7 @@ span.price span.dollar-sign {font-size: 36px;}
 }
 
 .quote-center .quote_additional_sign {
-  background: url(../img/shortcodes-sprite.png) no-repeat -251px -22px;
+  background: url(/img/shortcodes-sprite.png) no-repeat -251px -22px;
   position: absolute;
   top: 3px;
   right: 13px;
