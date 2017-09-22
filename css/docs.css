@@ -215,6 +215,7 @@ abbr {
 
 .wrapper {
   display: flex;
+  padding-top: 25px;
   min-height: 100%;
 }
 
