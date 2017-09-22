@@ -1,83 +1,37 @@
 @import url('//fonts.googleapis.com/css?family=Tangerine'); 
 @import url('//fonts.googleapis.com/css?family=Source+Sans+Pro'); 
 @import url('//fonts.googleapis.com/css?family=Great+Vibes');
-@import url('//fonts.googleapis.com/css?family=Montserrat:400,700'); 
+@import url('//fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('//fonts.googleapis.com/css?family=Merriweather:300,300i,400,700');
 @import url('//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'); 
 
-@font-face {
-  font-family: 'merriweather-regular';
-  src: url("/font/merriweather-regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'merriweather-italic';
-  src: url("/font/merriweather-italic.woff") format("woff");
-  font-weight: normal;
-  font-style: italic; }
-
-@font-face {
-  font-family: 'merriweather-bold';
-  src: url("/font/merriweather-bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'merriweather-bolditalic';
-  src: url("/font/merriweather-bolditalic.woff") format("woff");
-  font-weight: 700;
-  font-style: italic; }
-
-@font-face {
-  font-family: 'merriweather-black';
-  src: url("/font/merriweather-black.woff") format("woff");
-  font-weight: 900;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'merriweather-heavyitalic';
-  src: url("/font/merriweather-heavyitalic.woff") format("woff");
-  font-weight: 900;
-  font-style: italic; }
-
-@font-face {
-  font-family: 'merriweather-light';
-  src: url("/font/merriweather-light.woff") format("woff");
-  font-weight: 200;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'merriweather-lightitalic';
-  src: url("/font/merriweather-lightitalic.woff") format("woff");
-  font-weight: 200;
-  font-style: italic; }
-
 h1, h2, h3, h4 {
-  font-family: 'merriweather-bold';
+  font-family: 'Merriweather', serif;
   font-weight: 700;
   font-style: normal; }
 
 [role="note"] {
-  font-family: 'merriweather-light';
-  font-weight: 200;
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
   font-style: normal; }
 
 blockquote {
-  font-family: 'merriweather-lightitalic';
-  font-weight: 200;
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
   font-style: italic; }
 
 a[role="button"],
 input[type="submit"],
 input[type="reset"],
 button {
-  font-family: 'merriweather-regular';
+  font-family: 'Merriweather', serif;
   font-weight: 400;
   font-style: normal; }
 
 h5, h6 {
-  font-family: 'merriweather-italic';
-  font-weight: 400; }
+  font-family: 'Merriweather', serif;
+  font-style: italic;
+  font-weight: 300; }
 
 html {
   width: 100%;
