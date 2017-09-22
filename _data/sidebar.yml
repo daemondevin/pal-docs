@@ -3,10 +3,10 @@ nav:
   - title: navigate
     subfolderitems:
       - page: Preface
-        url: /thing1.html
+        url: /index.html
       - page: Getting Started
         submenu: true
-        url: /thing2.html
+        url: javascript:void(0);
         subsubfolderitems:
           - page: To Begin
             url: /subthing1.html
@@ -26,7 +26,7 @@ nav:
             url: /subthing2.html
       - page: Basics
         submenu: true
-        url: /thing3.html
+        url: javascript:void(0);
         subsubfolderitems:
           - page: Workspace
             url: /subthing1.html
@@ -46,7 +46,7 @@ nav:
             url: /subthing2.html
       - page: Advanced
         submenu: true
-        url: /thing3.html
+        url: javascript:void(0);
         subsubfolderitems:
           - page: UAC
             url: /subthing1.html
@@ -64,13 +64,13 @@ nav:
             url: /subthing2.html
       - page: custom.nsh
         submenu: true
-        url: /thing3.html
+        url: javascript:void(0);
         subsubfolderitems:
           - page: Overview
             url: /subthing1.html
       - page: PA.cLauncher.nsi
         submenu: true
-        url: /thing3.html
+        url: javascript:void(0);
         subsubfolderitems:
           - page: Overview
             url: /subthing1.html
@@ -78,7 +78,7 @@ nav:
             url: /subthing2.html
       - page: Final Touches
         submenu: true
-        url: /thing3.html
+        url: javascript:void(0);
         subsubfolderitems:
           - page: Troubleshoot
             url: /subthing1.html
