@@ -2,8 +2,8 @@
   font-family: 'portacons';
   src: url('/font/portacons.eot?46vxq6');
   src: url('/font/portacons.eot?46vxq6#iefix') format('embedded-opentype'),
-       url('/font/portacons.woff?46vxq6') format('woff'),
-       url('/font/portacons.ttf?46vxq6') format('truetype'),
+       url('/font/portacons.woff') format('woff'),
+       url('/font/portacons.ttf') format('truetype'),
        url('/font/portacons.svg?46vxq6#portacons') format('svg');
   font-weight: normal;
   font-style: normal;
