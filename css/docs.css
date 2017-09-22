@@ -91,11 +91,11 @@ html {
     outline: none; }
 
 body {
-	width: 100%;
+  width: 100%;
   height: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "Montserrat", Georgia,  sans-serif;
+  font-family: "Montserrat", Georgia, sans-serif;
   font-size: 1rem;
   line-height: 1.75;
   color: #444444; }
@@ -165,8 +165,8 @@ article a, article a:visited {
   border-bottom: 0.0625rem dotted #590a0b;
   color: #590a0b; }
   article a:hover, article a:focus {
-	  color: #b71c1c;
-	border-bottom-style: solid #b71c1c; }
+  color: #b71c1c;
+  border-bottom-style: solid #b71c1c; }
 
 article[role="article"] code.samp, article[role="article"] pre.samp {
   font-size: 12px;
@@ -186,10 +186,10 @@ blockquote {
   margin: 1em auto;
   color: #444444; }
   blockquote span.quoter {
-	  margin-left: 25px; }
+  margin-left: 25px; }
   blockquote code, blockquote q,
   blockquote span.quoter {
-    font-style: normal; }
+  font-style: normal; }
 
 q::before {
   content: "\201C"; }
@@ -221,15 +221,15 @@ abbr {
 
 #sidebar {
   position: absolute;
-  font-family: Montserrat;
+  font-family: "Montserrat";
   width: 220px;
 }
 
 .main {
-  padding-right: 10px;
-  padding-left: 20px;
+  z-index: 10;
+  padding: 30px;
+  padding-left: 40px;
   border-left: 1px solid #222222;
-  border-top: 1px solid #222222;
   background: #eee;
   transform: translate3d(220px, 0, 0);
   transition: transform .3s;
@@ -1016,12 +1016,10 @@ h3 {
   position: absolute;
   background: #eeeeee;
   border-right: 1px solid #222222;
-  border-top: 1px solid #222222;
-  margin-left: -10px;
   padding-top: 5em;
   padding-left: 25px;
   float: right;
-  display: block; 
+  display: block;
   min-height: 100%;
 }
 
