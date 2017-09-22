@@ -4,7 +4,7 @@
 title: 						"PAF Docs"
 email: 						"demon.devin@gmail.com"
 description: 				"A collection of help files focused on the development of portable applications using the PortableApps.com Format"
-baseurl: 					"https://demondevin.github.io/pal-docs/"
+baseurl: 					"pal-docs/"
 url: 						"https://demondevin.github.io/pal-docs/"
 logourl: 					"/assets/img/bloglogo.jpg"		
 fa-logo: 					"fa-bookmark-o"
