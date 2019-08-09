@@ -1,5 +1,5 @@
 
-_This is currently being worked on. For the complete and up-to-date version of this guide visit http://softables.tk/docs_
+_This is currently being worked on. For the complete and up-to-date version of this guide visit http://portableappz.x10.mx/docs_
 
 # <i class="icon-book"></i> The PAF Docs
 
@@ -26,12 +26,12 @@ I use a modified variant of PAL which I'm currently developing. You can visit th
 
 > <i class="icon-download"></i> __Modified Variants__
   
-> - [demon.devin's PA.c Launcher](https://github.com/daemondevin/pac-man "Pac-Man") <i class="icon-github-circled"></i>
+> - [daemon.devin's Pac-Man](https://github.com/daemondevin/pac-man "Pac-Man") <i class="icon-github-circled"></i>
 
 ## Official Docs <i class="icon-book"></i>
 For a more up-to-date version of these guidelines, visit my website where you can view these pages on a real user-friendly interface! Trust me, it's much more aesthetically pleasing to the eye.
 
-[The Official 'Unofficial' PAF Docs](http://portableappz.x10.mx/docs "The PAF Docs at Softables.tk/")
+[The Official 'Unofficial' PAF Docs](http://portableappz.x10.mx/docs "The PAF Docs")
 
 > Maintained by demon.devin (<daemon.devin@gmail.com>)
 > *I live to create, design, & code.*
