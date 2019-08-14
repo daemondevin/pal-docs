@@ -2,8 +2,8 @@
 
 # Site Settings
 title: 						"PAF Docs"
-email: 						"demon.devin@gmail.com"
-description: 				"A collection of help files focused on the development of portable applications using the PortableApps.com Format"
+email: 						"daemon.devin@gmail.com"
+description: 			 	"A collection of help files focused on the development of portable applications using the PortableApps.com Format"
 baseurl: 					"pal-docs/"
 url: 						"https://demondevin.github.io/pal-docs/"
 logourl: 					"/assets/img/bloglogo.jpg"		
@@ -12,17 +12,17 @@ paginate: 					5
 
 
 # Author Settings
-author_name: 				"demon.devin"
-author_url: 				"http://softables.tk/"
+author_name: 				"daemon.devin"
+author_url: 				"http://portableappz.x10.mx/"
 author_bio: 				"A creative virtuoso who seeks an environment which believes the same ideology of a hacker—a true hacker; not a cracker. For hackers will develop, build, and improve a person, place, and/or anything. As for crackers will deface, break, and intrude on a person, place, and/or anything."
-author_email: 				"demon.devin@gmail.com"
+author_email: 				"daemon.devin@gmail.com"
 author_image: 				"/assets/img/authorimage.jpg"
 
 
 # Social Settings
 twitter_url: 				"http://twitter.com"
 facebook_url: 				"http://facebook.com"
-github_url:  				"http://github.com"
+github_url:  				"http://github.com/daemondevin"
 youtube_url:  				"http://youtube.com"
 dribbble_url:  				"http://dribbble.com"
 googleplus_url: 			"http://google.com/plus"
@@ -35,7 +35,7 @@ linkedin_url:  				"http://linkedin.com"
 theme_disqus_shortname: 	"ecko"
 theme_google_comments: 		false
 theme_analytics_id: 		"UA-47473884-1"
-theme_analytics_domain: 	"Softables.tk"
+theme_analytics_domain: 	"http://portableappz.x10.mx/"
 theme_reading_time: 		true
 theme_autoload_comments: 	false
 theme_always_show_nav: 		false
