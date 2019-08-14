@@ -32,7 +32,7 @@ linkedin_url:  				"http://linkedin.com"
 
 
 # Theme Settings
-theme_disqus_shortname: 	"ecko"
+theme_disqus_shortname: 	""
 theme_google_comments: 		false
 theme_analytics_id: 		"UA-47473884-1"
 theme_analytics_domain: 	"http://portableappz.x10.mx/"
@@ -50,5 +50,4 @@ sass:
 
 # Build Settings
 markdown: 					kramdown
-permalink: 					pretty
 
