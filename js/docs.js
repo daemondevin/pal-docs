@@ -224,7 +224,7 @@ function showThisContent(whichDiv) {
 
 var nav =
   "<nav class='float-anchors'>" +
-	"<i class='fa'>&#xf05a;</i> <b>Table of Contents</b>" + "<ul>";
+	"<i class='fa'>&#xf05a;</i> <b>Contents</b>" + "<ul>";
 
 	var count = 0;
 	
