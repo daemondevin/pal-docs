@@ -31,7 +31,10 @@ I use a modified variant of PAL which I'm currently developing. You can visit th
 ## Official Docs <i class="icon-book"></i>
 For a more up-to-date version of these guidelines, visit my website where you can view these pages on a real user-friendly interface! Trust me, it's much more aesthetically pleasing to the eye.
 
-[The Official 'Unofficial' PAF Docs](http://portableappz.x10.mx/docs "The PAF Docs")
+[The Official 'Unofficial' PortableApps Docs](http://portableappz.x10.mx/docs "The PAF Docs")
 
-> Maintained by demon.devin (<daemon.devin@gmail.com>)
+> Maintained by daemon.devin (<daemon.devin@gmail.com>)
 > *I live to create, design, & code.*
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTc1NzQ5MTg2MV19
+-->
